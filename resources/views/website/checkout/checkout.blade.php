@@ -243,8 +243,8 @@
                                             <td class="qty">
                                                 {{$item->qty}}
                                             </td>
-                                            <td class="amount">NRs {{ number_format($item->price) }} </td>
-                                            <td class="amount">NRs {{ number_format($item->price * $item->qty) }} </td>
+                                            <td class="amount">$ {{ number_format($item->price) }} </td>
+                                            <td class="amount">$ {{ number_format($item->price * $item->qty) }} </td>
 
                                         </tr>
                                     @empty
@@ -265,9 +265,9 @@
                             </div>
 
                             <div class="checkout-totals-right">
-                               {{-- NRs {{$subTotal}}<br>--}}
-                                {{--NRs {{$tax}} <br>--}}
-                                <span class="checkout-totals-total"> NRs {{$subTotal}}</span>
+                               {{-- $ {{$subTotal}}<br>--}}
+                                {{--$ {{$tax}} <br>--}}
+                                <span class="checkout-totals-total"> $ {{$subTotal}}</span>
 
                             </div>
                         </div> <!-- end checkout-totals -->
