@@ -1,0 +1,113 @@
+/*-----------------------------------
+ Footer
+---------------------------------------*/
+.hitStore_footer {
+  width: 100%;
+  display: block;
+  float: left;
+}
+
+.hitStore_main_footer {
+  width: 100%;
+  background: #04c4d9;
+  padding-top: 60px;
+}
+
+.hitStore_main_footer .footer-widget > div,
+.hitStore_main_footer .footer-widget > aside,
+.hitStore_main_footer .footer-widget > section {
+  padding: 0 15px;
+  width: 100%;
+  display: block;
+  color: #FFF;
+}
+
+.hitStore_main_footer .widget .textwidget p.contact-info {
+  font-size: 14px;
+  line-height: 23px;
+  margin-bottom: 13px;
+}
+
+.hitStore_main_footer .widget .textwidget p.contact-info span {
+  display: block;
+  font-weight: 600;
+}
+
+.hitStore_main_footer .widget .textwidget p.contact-info a {
+  display: block;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.hitStore_main_footer .widget a {
+  color: #FFF;
+  transition: all 0.4s ease;
+}
+
+.hitStore_main_footer .widget a:hover {
+  color: #ff5c00;
+}
+
+.hitStore_main_footer .widget ul {
+  padding: 0;
+  margin: 0;
+}
+
+.hitStore_main_footer .widget ul li {
+  list-style-type: none;
+}
+
+.hitStore_main_footer .widget .widget-title {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+
+}
+
+.hitStore_main_footer .widget h2.widget-title:before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  width: 100px;
+  border-bottom: 2px solid #3986bb;
+}
+
+.hitStore_main_footer .widget ul li,
+.hitStore_main_footer .widget ul li a,
+.hitStore_main_footer .widget ul li:before,
+.hitStore_main_footer .widget ul li a:before {
+  color: #fff;
+  font-size: 14px;
+}
+
+.hitStore_main_footer .widget ul li {
+  margin-bottom: 10px;
+}
+
+.hitStore_main_footer .widget ul li:last-child {
+  border-bottom: 0;
+}
+
+.hitStore_main_footer .subscribe input[type="text"]:focus {
+  outline: none
+}
+
+.hitStore_footer .hitStore_main_footer_copyright {
+  padding:7px 0;
+  background: #222529;
+}
+
+.hitStore_footer .hitStore_main_footer_copyright a {
+  color:#ff5c00 ;
+}
+
+.hitStore_footer .hitStore_main_footer_copyright .row {
+  align-items: center;
+}
+
+.hitStore_footer .hitStore_main_footer_copyright p {
+  color: #FFF;
+  margin: 0px;
+}

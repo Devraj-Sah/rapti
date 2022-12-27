@@ -1,0 +1,205 @@
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+span.sub-toggle {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 2px;
+  width: 42px;
+  height: 42px;
+  text-align: center;
+  background: transparent;
+  color: #212121;
+  line-height: 42px;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.main-navigation {
+  background: #2b2b2b;
+  border-top: 1px solid #e2dddd;
+}
+
+.main-navigation ul {
+  margin: 0;
+  padding: 0 1px;
+}
+
+.main-navigation ul li {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin: 0 -2px;
+}
+
+.main-navigation ul ul li {
+  margin: 0;
+}
+
+.main-navigation ul li a {
+  display: block;
+  color: #FFF;
+  font-size: 16px;
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.main-navigation ul li:hover > a,
+.main-navigation ul li.current-menu-item > a {
+  color: #FFF;
+}
+
+.main-navigation ul li ul {
+  left: 0;
+  top: 72%;
+  margin: 0;
+  width: 210px;
+  display: block;
+  list-style: none;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  background-color: #2b2b2b;
+  z-index: 999;
+  transform: translate(0, 10px);
+  transition: all .3s ease-in-out;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  border-top: 2px solid #ffffff;
+  padding: 0;
+}
+
+.main-navigation ul li ul li {
+  position: relative;
+  display: block;
+}
+
+.main-navigation ul li ul li a {
+  padding: 11px 20px;
+  font-size: 13px;
+  text-align: left;
+}
+
+.main-navigation ul li:hover > ul {
+
+  opacity: 1;
+  visibility: visible;
+}
+
+.main-navigation ul li ul li ul {
+  left: 100%;
+  top: 0%;
+  margin: 0;
+  width: 210px;
+  padding: 0;
+  display: block;
+  list-style: none;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgb(48, 48, 48);
+  z-index: 1;
+  -webkit-transform: translate(0, 10px);
+  -ms-transform: translate(0, 10px);
+  transform: translate(0, 10px);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3)
+}
+
+.main-navigation ul li ul li {
+  position: relative;
+}
+
+.main-navigation ul li ul li ul {
+  left: 100%;
+  top: 0%;
+  margin: 0;
+  width: 210px;
+  display: block;
+  list-style: none;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  background-color: #073b75;
+  z-index: 1;
+  padding: 0;
+  transform: translate(0, 10px);
+  transition: all .3s ease-in-out;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.main-navigation ul li ul li:hover > ul {
+  transform: translate(0, 0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/*menu has children*/
+.main-navigation ul > li.menu-item-has-children {
+  position: relative;
+}
+
+.main-navigation ul > li.menu-item-has-children a {
+  padding-right: 25px;
+}
+
+.main-navigation div > ul > li.menu-item-has-children:before {
+  content: '\f107';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  color: #FFF;
+  right: 9px;
+  font-size: 14px;
+}
+
+.main-navigation ul ul li.menu-item-has-children:before {
+  content: '\f105';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  color: #FFF;
+  right: 9px;
+}
+
+.main-navigation div > ul > li.menu-item-has-children:hover:before,
+.main-navigation ul ul li.menu-item-has-children:hover:before {
+  color: #FFF;
+}
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: left;
+  width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%;
+}
+
+.main-menu-toggle {
+  display: none;
+}

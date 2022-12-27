@@ -1,0 +1,503 @@
+/*********************
+*       Header
+*
+***********************/
+
+/***** Top Header****/
+.hitStore_topheader {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  background: #04c4d9;
+
+}
+
+.hitStore_topheader .hitStore_topheader_left {
+  float: left;
+}
+
+.hitStore_topheader .hitStore_topheader_right {
+  float: right;
+}
+
+.hitStore_topheader .top_menu_wrapper ul.hitStore_top_menu {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.hitStore_topheader .top_menu_wrapper ul.hitStore_top_menu li {
+  float: left;
+  list-style-type: none;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.hitStore_topheader .top_menu_wrapper ul.hitStore_top_menu li:after {
+  content: "|";
+  color: #ccc;
+}
+
+.hitStore_topheader .top_menu_wrapper ul.hitStore_top_menu li:last-child:after {
+  content: "";
+}
+
+.hitStore_topheader .top_menu_wrapper ul.hitStore_top_menu li a {
+  color: #ffffff;
+  margin: 0px 8px;
+  transition: all 0.4s ease;
+}
+
+.hitStore_topheader .hitStore_topheader_right ul.hitstore_socialmeida_link {
+  padding: 0;
+  margin: 0;
+  float: right;
+}
+
+.hitStore_topheader .hitStore_topheader_right ul.hitstore_socialmeida_link li {
+  display: inline;
+  list-style-type: none;
+  padding: 5px;
+
+}
+
+.hitStore_topheader .hitStore_topheader_right ul.hitstore_socialmeida_link li a {
+  color: #FFFFFF;
+  transition: all 0.4s ease;
+}
+
+.hitStore_topheader .hitStore_topheader_right ul.hitstore_socialmeida_link li a:hover,
+.hitStore_topheader .top_menu_wrapper ul.hitStore_top_menu li a:hover {
+  color: #469c6e;
+}
+
+/***** main Header****/
+.hitStore_mainheader {
+  border-bottom: 1px solid #e3e3e3;
+  box-shadow: 16px 1px 9px -2px  rgba(0,0,0,0.67);
+  background: #fff;
+  .row {
+    align-items: center;
+  }
+}
+
+.hitStore_mainheader .logo.site-branding h1 {
+  margin: 5px 0px 0px 0px;
+  text-transform: uppercase;
+}
+
+.hitStore_mainheader .logo.site-branding h1 a {
+  color: #ff5c00;
+}
+
+.hitStore_mainheader .logo.site-branding p {
+  color: #000;
+  margin: 0;
+  font-size: 14px;
+}
+
+.hitStore_mainheader .logo.site-branding {
+
+}
+
+.hitStore_mainheader .logo.site-branding img {
+  max-width: 100%;
+}
+
+.hitStore_mainheader .header_select_cata {
+  width: 100%;
+  float: left;
+  position: relative;
+  display: table-cell;
+}
+
+.hitStore_mainheader .header_search_form {
+  display: table;
+  position: relative;
+  width: 100%;
+  height: 80px;
+}
+
+.hitStore_mainheader .header_search_form form {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.search-box-border {
+  display: inline-block;
+  width: 100%;
+  background: #04c4d9;
+  padding: 1px;
+}
+
+.hitStore_mainheader .header_select_cata select {
+  padding-left: 10px;
+  height: 40px;
+  background: #f2f3f7;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.hitStore_mainheader .header_select_cata:after {
+  position: absolute;
+
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  right: 7px;
+  color: #8e8e90;
+  bottom: 7px;
+}
+
+.hitStore_mainheader .header_search_input_box {
+  float: left;
+  width: 70%;
+  display: table-cell;
+}
+
+.hitStore_mainheader .header_search_input_box input {
+  padding-left: 10px;
+  height: 40px;
+  background: #f2f3f7;
+  width: 100%;
+  border-radius: 0;
+
+  &::placeholder {
+    font-size: 16px;
+  }
+}
+
+.hitStore_mainheader button.header_product_search {
+  position: absolute;
+  right: 0;
+  background: transparent;
+  border: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  cursor: pointer;
+  padding: 8px 13px;
+  color: $primary_color;
+}
+
+/***** header user account, wishlist, cart *****/
+.htStore_ecommerce_extra_button {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.hitStore_user_account {
+  position: relative;
+}
+
+.hitStore_user_account, .hitStore_user_wishlist, .hitStore_user_cart, .hitStore_header_search {
+  width: 60px;
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  float: right;
+  line-height: 2.5;
+}
+
+.hitStore_user_account .hitStore_user_account_icon, .hitStore_user_wishlist .hitStore_wishlist_icon,
+.hitStore_user_cart .hitStore_cart_icon, .hitStore_search_icon {
+  font-size: 45px;
+}
+
+.hitStore_user_wishlist .hitStore_wishlist_icon span, .hitStore_user_cart .hitStore_cart_icon span, .hitStore_search_icon span, .hitStore_user_account_icon span {
+  position: relative;
+  color: #4e4e4e;
+}
+
+.hitStore_user_wishlist .hitStore_wishlist_icon span, .hitStore_user_cart .hitStore_cart_icon span, .hitStore_search_icon span, .hitStore_user_account_icon span {
+  position: relative;
+  color: #15273a;
+}
+
+.hitStore_user_account .hitStore_user_account_icon .hitStore_account_signIn {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.hitStore_user_account .user_account_menu_dropdown {
+  position: absolute;
+  background: #FFF;
+  padding: 12px;
+  width: 180px;
+  top: 65px;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.2);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+  transform: translateY(-1em);
+  z-index: 999;
+}
+
+.hitStore_user_account:hover .user_account_menu_dropdown {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.3s;
+}
+
+.hitStore_user_account .user_account_menu_dropdown .hitStore_account_menu_list ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.hitStore_user_account .user_account_menu_dropdown .hitStore_signIn.hitstore_login a.hitStore_login_button {
+  display: block;
+  width: 100%;
+  color: #000;
+  background: transparent;
+  margin-bottom: 5px;
+  font-size: 12px;
+  border: 1px solid #000;
+  transition: all 0.4s ease;
+}
+
+.hitStore_user_account .user_account_menu_dropdown .hitStore_signIn.hitstore_login a.hitStore_login_button:hover {
+  display: block;
+  width: 100%;
+  color: #FFF;
+  background: #ff5c00;
+  margin-bottom: 5px;
+  font-size: 12px;
+  border: 1px solid #ff5c00;
+}
+
+.hitStore_user_account .user_account_menu_dropdown .hitStore_signIn.hitstore_login a.hitStore_signIn_button {
+  display: block;
+  width: 100%;
+  color: #FFF;
+  background: #000;
+  margin-bottom: 5px;
+  font-size: 12px;
+  border: 1px solid #000;
+  transition: all 0.4s ease;
+}
+
+.hitStore_user_account .user_account_menu_dropdown .hitStore_signIn.hitstore_login a.hitStore_signIn_button:hover {
+  display: block;
+  width: 100%;
+  color: #FFF;
+  background: #ff5c00;
+  margin-bottom: 5px;
+  font-size: 12px;
+  border: 1px solid #ff5c00;
+}
+
+.hitStore_user_account .user_account_menu_dropdown .hitStore_account_menu_list ul li {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ddd;
+}
+
+.hitStore_user_account, .hitStore_user_wishlist, .hitStore_user_cart, .hitStore_header_search {
+  cursor: pointer;
+}
+
+.wishlist_count, .cart_count {
+  position: absolute;
+  color: #FFF;
+  font-size: 12px;
+  top: -4px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  right: -12px;
+  line-height: 2;
+  background: #e50000;
+}
+
+/*******************
+ HitStore Main Category Nav
+*********************/
+.hitStore_category_with_banner {
+  display: block;
+  margin-top: 15px;
+}
+
+.hitStore_category_nav_left {
+  float: left;
+  margin-left: 15px;
+}
+
+.hitStore_category_nav_right {
+  float: right;
+  margin-left: 15px;
+}
+
+span.cat-toggle {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 2px;
+  width: 42px;
+  height: 42px;
+  text-align: center;
+  background: transparent;
+  color: #FFF;
+  line-height: 42px;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.hitStore_category_with_banner .hitStore_main_category_nav {
+  width: calc(20% - 15px);
+
+}
+
+.hitStore_main_category_nav.hitStore_category_nav_left .hitStore_main_category_title > h3 {
+  padding: 10px 15px 10px 50px;
+  text-align: left;
+  position: relative;
+}
+
+.hitStore_main_category_nav.hitStore_category_nav_right .hitStore_main_category_title > h3 {
+  padding: 10px 50px 10px 15px;
+  text-align: right;
+}
+
+.hitStore_main_category_nav.hitStore_category_nav_left .hitStore_main_category_title > h3,
+.hitStore_main_category_nav.hitStore_category_nav_right .hitStore_main_category_title > h3 {
+  background: #303030 none repeat scroll 0 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  position: relative;
+  text-transform: uppercase;
+  transition: all .3s ease 0s;
+  margin: 0;
+}
+
+.hitStore_main_category_nav.hitStore_category_nav_left .hitStore_main_category_title > h3::before {
+  left: 20px;
+}
+
+.hitStore_main_category_nav.hitStore_category_nav_right .hitStore_main_category_title > h3::before {
+  right: 10px;
+}
+
+.hitStore_main_category_nav.hitStore_category_nav_left .hitStore_main_category_title > h3::before,
+.hitStore_main_category_nav.hitStore_category_nav_right .hitStore_main_category_title > h3::before {
+  content: '\f039';
+  font-size: 20px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  margin-right: 12px;
+  position: absolute;
+  top: 8px;
+}
+
+.hitStore_category_with_banner .menu-product-category-container {
+  background: #ffffff none repeat scroll 0 0;
+  border: 1px solid rgba(129, 129, 129, 0.2);
+  width: 100%;
+  z-index: 99;
+}
+
+.hitStore_category_with_banner .hitStore_main_category_nav ul {
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+}
+
+.hitStore_category_with_banner .hitStore_main_category_nav ul li {
+  list-style-type: none;
+}
+
+.hitStore_category_with_banner .hitStore_main_category_nav.hitStore_category_nav_left ul li a,
+.hitStore_category_with_banner .hitStore_main_category_nav.hitStore_category_nav_right ul li a {
+  color: #333;
+  display: block;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  padding: 10px 20px;
+  text-transform: capitalize;
+  background-color: #fff;
+  transition: all .3s ease 0s;
+  border-bottom: 1px solid #eee;
+}
+
+.hitStore_category_with_banner .hitStore_main_category_nav.hitStore_category_nav_right ul li a {
+  text-align: right;
+}
+
+.hitStore_category_with_banner .hitStore_main_category_nav ul li a:hover {
+  color: #469c6e;
+}
+
+/*menu has children*/
+.hitStore_category_with_banner .hitStore_main_category_nav ul > li.menu-item-has-children {
+  position: relative;
+}
+
+.hitStore_category_with_banner .hitStore_main_category_nav.hitStore_category_nav_left ul > li.menu-item-has-children:after,
+.hitStore_category_with_banner .hitStore_main_category_nav.hitStore_category_nav_right ul > li.menu-item-has-children:after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  color: #656362;
+  font-size: 14px;
+}
+
+.hitStore_category_with_banner .hitStore_main_category_nav.hitStore_category_nav_left ul > li.menu-item-has-children:after {
+  right: 9px;
+  content: '\f105';
+}
+
+.hitStore_category_with_banner .hitStore_main_category_nav.hitStore_category_nav_right ul > li.menu-item-has-children:after {
+  left: 9px;
+  content: '\f104';
+}
+
+.hitStore_category_with_banner .hitStore_main_category_nav.hitStore_category_nav_left ul li:hover > ul,
+.hitStore_category_with_banner .hitStore_main_category_nav.hitStore_category_nav_right ul li:hover > ul {
+  transform: translate(0, 0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.hitStore_category_with_banner .hitStore_main_category_nav.hitStore_category_nav_left ul li ul {
+  /*left: 350px;*/
+  right: -210px;
+}
+
+.hitStore_category_with_banner .hitStore_main_category_nav.hitStore_category_nav_right ul li ul {
+  /*right: 350px;*/
+  left: -210px;
+}
+
+.hitStore_category_with_banner .hitStore_main_category_nav.hitStore_category_nav_left ul li ul,
+.hitStore_category_with_banner .hitStore_main_category_nav.hitStore_category_nav_right ul li ul {
+  top: 20%;
+  margin: 0;
+  width: 210px;
+  display: block;
+  list-style: none;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  height: auto;
+  z-index: 999;
+  -webkit-transform: translate(0, 10px);
+  -ms-transform: translate(0, 10px);
+  transform: translate(0, 10px);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hitStore_category_with_banner .hitStore_main_category_nav ul li ul li {
+  position: relative;
+  border: none;
+}

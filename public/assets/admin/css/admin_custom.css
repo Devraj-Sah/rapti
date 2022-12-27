@@ -1,0 +1,10 @@
+/*===LogIn CSS==========================================================================================================*/
+#login_box {
+    margin-top: 200px;
+    background-color: #55acee;
+    border-radius: 3px;
+    padding: 15px 20px;
+}
+#login_box hr {
+    margin: 5px;
+}

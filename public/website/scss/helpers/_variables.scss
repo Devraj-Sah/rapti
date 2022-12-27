@@ -1,0 +1,42 @@
+$primary_color: #006c8f;
+$secondary_color:#6fc7b1;
+$color_pink: #e15573;
+$color_black: #000;
+$color_white: #fff;
+$color_green: #85bf36;
+$color_grey: #a6a6a6;
+
+/*!=== Fonts===== */
+$font_title:'Poppins', sans-serif;
+$font_main: 'Poppins', sans-serif;
+$font_copyright: 'Poppins', sans-serif;
+
+
+/*!== Typography == */
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+$font__line-heading: 1.16;
+$font-letter-spacing: 0.5px;
+
+$color_text_title: #333;
+$color_text_sub_title: #8C8C8C;
+$color_text_para: #333;
+
+/*== Theme Colors == */
+$background-primary: $color_white;
+$background-secondary: #f9f9f9;
+$background-screen: #f1f1f1;
+$background-hr: #ccc;
+
+$color__text-screen: #21759b;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+$color__link: $primary_color;
+/*$color__link-visited: purple;*/
+$color__link-hover: #eb8206;
+
+
+$color_button_border: #eff5f5;
+

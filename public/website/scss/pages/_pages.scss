@@ -1,0 +1,499 @@
+/*----------------------------------------------------------------------
+## Breadcrumbs
+------------------------------------------------------------------------*/
+.breadcrumblinks {
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+ul.breadcrumb {
+  border-bottom: 1px solid #dddddd;
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.breadcrumb li {
+  display: inline-block;
+  position: relative;
+  margin-right: 11px;
+}
+
+ul.breadcrumb li a {
+  color: #073b75;
+}
+
+ul.breadcrumb li:after {
+  content: " \f054";
+  padding: 0 5px;
+  font-size: 10px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  position: absolute;
+  right: -17px;
+  top: 5px;
+}
+
+ul.breadcrumb li:last-child:after {
+  content: none;
+}
+
+/*----------------------------------------------------------------------
+## Product Deatail
+------------------------------------------------------------------------*/
+.product-detail {
+  margin: 15px 0 0 0;
+}
+
+.product-detail .photos {
+  display: inline;
+  width: 100%;
+
+}
+
+.product-detail .photos .mainimage {
+  padding-left: 100px;
+  margin: 0;
+  display: block;
+  width: 100%;
+
+}
+
+.product-detail .photos .mainimage .img {
+  width: 100%;
+}
+
+.product-detail .photos ul.photo-list {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 80px;
+  margin-right: 20px;
+  float: left;
+}
+
+.product-detail .photos li {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.zoomWrapper {
+  overflow: hidden;
+}
+
+.product-detail .photos li img {
+  width: 100%;
+}
+
+.product-detail .photos figure {
+  margin: 0;
+}
+
+.productDetails {
+  display: block;
+  margin-bottom: 30px;
+  padding: 0 30px 30px;
+
+}
+
+.productDetails .titleName {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+
+.productDetails .titleName small {
+  font-size: 13px;
+  font-weight: 400;
+  display: block;
+}
+
+.productDetails .socialshare {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.socialshare label {
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-right: 30px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 24px;
+}
+
+.productDetails .socialshare ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 70px;
+}
+
+.productDetails .socialshare ul li {
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
+
+.productDetails .socialshare ul li a {
+  display: block;
+  color: #666666;
+  font-size: 24px;
+}
+
+.productDetails .cost {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.productDetails .cost .newcost {
+  float: left;
+  margin-right: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #242a2d;
+}
+
+.productDetails .cost .oldcost {
+  float: left;
+  text-decoration-line: line-through;
+  color: #999999;
+  font-size: 14px;
+}
+
+.productDetails .quantity {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.productDetails .quantity .label {
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-right: 30px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 40px;
+}
+
+.productDetails .quantity .field {
+  padding-left: 100px;
+}
+
+.productDetails .quantity .field .number {
+  width: 190px;
+  position: relative;
+}
+
+.productDetails .quantity .field .number button {
+  height: 100%;
+  background: #073b75;
+  color: #FFF;
+  position: absolute;
+  top: 0;
+  padding: 10px 24px 9px 24px;
+
+}
+
+.productDetails .quantity .field .number button.left {
+  border-right: 1px solid #dddddd;
+  left: 0;
+
+}
+
+.productDetails .quantity .field .number button.right {
+  border-left: 1px solid #dddddd;
+  right: 0;
+}
+
+.productDetails .quantity .field .number input.center {
+  text-align: center;
+  width: 100%;
+  padding: 8px 50px 8px 50px;
+
+}
+
+.productDetails .quantity .field .number input[disabled] {
+  background: #ffffff;
+}
+
+.productDetails .shipping {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.productDetails .shipping .label {
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-right: 30px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 40px;
+}
+
+.productDetails .shipping .field {
+  padding-left: 135px;
+  line-height: 38px;
+}
+
+.productDetails .btn-cart {
+  display: inline-block;
+  width: 100%;
+}
+
+.productDetails .btn-cart button {
+  width: calc(50% - 10px);
+  float: left;
+  margin-right: 10px;
+  background: #2b5480;
+  color: #ffffff;
+  line-height: 27px;
+  height: 48px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.productDetails .quantity .field .number button:hover {
+  color: #ffffff;
+  background: #242a2d;
+  cursor: pointer;
+}
+
+.productDetails .btn-cart button.buy {
+  background: #489f6e;
+}
+
+/*-------------------------------------------------------------
+## Tabs
+-------------------------------------------------------------------*/
+.tabs-description section {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #2b547f;
+}
+
+.tabs-description input {
+  display: none;
+}
+
+.tabs-description label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #abc;
+  border: 1px solid transparent;
+}
+
+.tabs-description label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+.tabs-description label:hover {
+  color: #789;
+  cursor: pointer;
+}
+
+.tabs-description input:checked + label {
+  color: #2b547f;
+  border: 1px solid #2b547f;
+  border-top: 2px solid #2b547f;
+  border-bottom: 1px solid #fff;
+}
+
+.tabs-description #tab1:checked ~ #content1,
+.tabs-description #tab2:checked ~ #content2,
+.tabs-description #tab3:checked ~ #content3,
+.tabs-description #tab4:checked ~ #content4 {
+  display: block;
+}
+
+@media screen and (max-width: 800px) {
+  .tabs-description label {
+    font-size: 0;
+  }
+
+  .tabs-description label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tabs-description label {
+    padding: 15px;
+  }
+}
+
+/*--------------------------- Contact Us ---------------------------------*/
+.contact_form_page {
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.contact-icon {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.contact-icon .box {
+  display: flex;
+  align-items: center;
+}
+
+.contact-icon .icon-box {
+  width: 15%;
+}
+
+.contact-icon .text p {
+  margin: 0;
+}
+
+.contact-icon .contact-inner a {
+  font-size: 16px;
+  display: block;
+  color: #737373;
+}
+
+.contact-icon .contact-inner i {
+  color: #fff;
+  display: inline-block;
+  font-size: 26px;
+  text-align: center;
+  line-height: 48px;
+  margin-right: 15px;
+  border-radius: 3px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #073b75;
+  background: #073b75;
+  margin-top: 15px;
+}
+
+.contact-icon .contact-inner a span {
+  line-height: 30px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.contact_form .wpcf7 p {
+  margin-bottom: 0;
+}
+
+.contact_form .wpcf7 label {
+  display: inline-block;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.contact_form .wpcf7 input, .contact_form .wpcf7 .wpcf7-textarea {
+  background: #f2f2f2;
+  width: 100%;
+  margin-bottom: .5rem;
+}
+
+.contact_form .wpcf7 .wpcf7-textarea {
+  height: 200px;
+}
+
+textarea {
+  width: 100%;
+}
+
+.contact_form .wpcf7 input[type="submit"] {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  padding: 12px 28px;
+  font-size: 15px;
+  line-height: 1.5;
+  border-radius: 0px;
+  position: relative;
+  z-index: 9;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  background: $primary_color;
+  color: $color_white;
+  border: 1px solid $primary_color;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #073b75;
+    color: $color_white;
+    border: 1px solid #073b75;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+}
+
+.page {
+  figure {
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+/*---------------*/
+
+.checkout-section {
+  .success {
+    background: #f1f1f1;
+    padding: 20px;
+    h4 {
+      font-size: 20px;
+    }
+    ul {
+      background: #FFF;
+      margin: 0;
+      padding: 15px;
+      li {
+        list-style-type: none;
+      }
+    }
+  }
+  .title {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .orderNum {
+    font-size: 18px;
+    margin-bottom: 20px;
+    span {
+      color: #e22b2b;
+    }
+  }
+}
+
+ul.catalogue {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style-type: none;
+    position: relative;
+    margin-bottom: 20px;
+    width: 300px;
+    a {
+      background: #04c4d9;
+      padding: 15px;
+      display: block;
+      color:#FFF;
+
+    }
+  }
+
+}

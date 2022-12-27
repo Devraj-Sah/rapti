@@ -1,0 +1,98 @@
+/*!
+Theme Name: shineNepal
+Theme URI: http://shineNepal.me/
+Author: Underscores.me
+Author URI: http://shineNepal.me/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: shinenepal
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+shineNepal is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+# Core variables and mixins
+--------------------------------------------------------------*/
+@import "helpers/_variables";
+@import "helpers/_mixins";
+/*--------------------------------------------------------------
+# Fonts
+--------------------------------------------------------------*/
+@import "base/_fonts";
+/*--------------------------------------------------------------
+# Vendors
+--------------------------------------------------------------*/
+@import "vendors/_normalize";
+@import "vendors/_animate";
+@import "vendors/_bootstrap";
+@import "vendors/_owlCrousal";
+@import "vendors/_owlTheme";
+@import "vendors/_fontsawsome";
+@import "vendors/_icofont";
+@import "vendors/_hero";
+@import "vendors/_lightslider";
+@import "vendors/_nouislider.scss";
+
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "base/_typography";
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "components/_elements";
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "components/_navigation";
+/*--------------------------------------------------------------
+# Form
+--------------------------------------------------------------*/
+@import "components/_form";
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "components/_widgets";
+/*--------------------------------------------------------------
+# Buttons
+--------------------------------------------------------------*/
+@import "components/_button";
+/*--------------------------------------------------------------
+# Grid
+--------------------------------------------------------------*/
+@import "helpers/_grid";
+/*--------------------------------------------------------------
+# layout
+--------------------------------------------------------------*/
+@import "layout/_header";
+@import "layout/_footer";
+@import "layout/_breadcrumbs";
+/*--------------------------------------------------------------
+# Theme
+--------------------------------------------------------------*/
+@import "themes/_theme";
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+@import "pages/_home";
+@import "pages/_pages";
+@import "pages/_category";
+@import "pages/_cart";
+@import "pages/_checkout";
+/*--------------------------------------------------------------
+# Responsive
+--------------------------------------------------------------*/
+@import "themes/_responsive";
