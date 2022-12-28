@@ -326,22 +326,22 @@
                         {{ csrf_field() }}
                         <div class="col-md-12 col-sm-12">
                             <label for="email">Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                            <input type="text" name="name" class="form-control" placeholder="Full Name" value="{{old('name')}}" required >
                         </div>
 
                         <div class="col-md-12 col-sm-12">
                             <label for="email">Email</label>
-                            <input type="text" name="email" class="form-control" placeholder="Email" required>
+                            <input type="text" name="email" class="form-control" placeholder="Email" value="{{old('email')}}" required >
                         </div>
                         <div class="col-md-12 col-sm-12">
                             <label for="email">Password</label>
-                            <input type="password" name="password" class="form-control" required
-                                   placeholder="Password">
+                            <input type="password" name="password" class="form-control" 
+                                   placeholder="Password" required >
                         </div>
                         <div class="col-md-12 col-sm-12">
                             <label for="email">Conform Password</label>
                             <input type="password" name="password_confirmation" class="form-control"
-                                   placeholder="Confirm Password">
+                                   placeholder="Confirm Password" required >
                         </div>
                         <div class="col-md-12 col-sm-12">
                             <button type="submit" class="button-primary">Submit</button>

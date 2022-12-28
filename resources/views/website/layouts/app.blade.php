@@ -78,12 +78,7 @@
         @endif
 
 
-    @if($message = Session::get('error'))
-        <div class="alert alert-danger" style="background: #f71b1b">
-            <p>{{$message}}</p>
-        </div>
-    @endif
-
+   
     @yield('content')
 
     @include('website.partials.footer')
