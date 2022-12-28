@@ -52,9 +52,28 @@
                         @endforeach
                     </div>
                 </div>
-            </div>
-
+            </div>            
         </div>
+        <div id="dev" class="row" style="display: flex; justify-content:center">
+            <div id="" >
+                <button class="rounded-5 evendev">Prev</button>
+            </div>
+            <div class="ml-5 " >
+                <button class="rounded-5 odddev">Next</button>
+            </div>
+        </div>
+        <script>
+            $(function() {
+                $(document).on("click", "#dev .evendev", function(event) {
+                $("#magazine").turn("previous");
+                });
+
+                $(document).on("click", " #dev .odddev", function(event) {
+                $("#magazine").turn("next");
+                });
+
+                });
+        </script>
 
     </div>
     <section class="home-product">
