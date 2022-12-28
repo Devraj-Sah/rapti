@@ -1,7 +1,7 @@
 @extends('website.layouts.app')
-@section('page_title', 'Aadit Trading')
-@section('page_keyword', 'Handicraft')
-@section('page_description', 'Handmade Products')
+@section('page_title', 'Rapti Fashion')
+@section('page_keyword', 'Checkout')
+@section('page_description', 'First add to Cart to CheckOut')
 
 @section('content')
     <style>
@@ -13,6 +13,10 @@
         .form-check-input {
             margin-top: 7px;
         }
+        .form-group.required .control-label:after {
+            content:"*";
+            color:red;
+        }
     </style>
     <div class="checkout-section">
         <div class="container">
@@ -23,70 +27,70 @@
                     <h2>Billing Details</h2>
                     <div class="row">
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
-                                {!! Form::label('company_name', 'Company Name') !!}
-                                {!! Form::text('company_name', $value = null, ['id'=>'text','placeholder'=>'Company Name','class'=>'form-control']) !!}
+                            <div class="form-group required">
+                                {!! Form::label('company_name', 'Company Name',['class'=>'control-label']) !!}
+                                {!! Form::text('company_name', $value = null, ['id'=>'text','placeholder'=>'Company Name','class'=>'form-control','required']) !!}
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
-                                {!! Form::label('name', 'Name') !!}
-                                {!! Form::text('name', $value = null, ['id'=>'name','placeholder'=>'Name','class'=>'form-control']) !!}
+                            <div class="form-group required">
+                                {!! Form::label('name', 'Name',['class'=>'control-label']) !!}
+                                {!! Form::text('name', $value = null, ['id'=>'name','placeholder'=>'Name','class'=>'form-control','required']) !!}
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
-                                {!! Form::label('address_line_1', 'Address Line 1') !!}
-                                {!! Form::text('address_line_1', $value = null, ['id'=>'address_line_1','placeholder'=>'Address Line 1','class'=>'form-control']) !!}
+                            <div class="form-group required">
+                                {!! Form::label('address_line_1', 'Address Line 1',['class'=>'control-label']) !!}
+                                {!! Form::text('address_line_1', $value = null, ['id'=>'address_line_1','placeholder'=>'Address Line 1','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group">
-                                {!! Form::label('address_line_2', 'Address Line 2 ') !!}
+                                {!! Form::label('address_line_2', 'Address Line 2 ',['class'=>'control-label']) !!}
                                 {!! Form::text('address_line_2', $value = null, ['id'=>'address_line_2','placeholder'=>'Address Line 2','class'=>'form-control']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
-                                {!! Form::label('country', 'Country') !!}
-                                {!! Form::text('country', $value = null, ['id'=>'country','placeholder'=>'Country','class'=>'form-control']) !!}
+                            <div class="form-group required">
+                                {!! Form::label('country', 'Country',['class'=>'control-label']) !!}
+                                {!! Form::text('country', $value = null, ['id'=>'country','placeholder'=>'Country','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
-                                {!! Form::label('city', 'City') !!}
-                                {!! Form::text('city', $value = null, ['id'=>'city','placeholder'=>'City','class'=>'form-control']) !!}
+                            <div class="form-group required">
+                                {!! Form::label('city', 'City',['class'=>'control-label']) !!}
+                                {!! Form::text('city', $value = null, ['id'=>'city','placeholder'=>'City','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
-                                {!! Form::label('state', 'State') !!}
-                                {!! Form::text('state', $value = null, ['id'=>'state','placeholder'=>'State','class'=>'form-control']) !!}
+                            <div class="form-group required">
+                                {!! Form::label('state', 'State',['class'=>'control-label']) !!}
+                                {!! Form::text('state', $value = null, ['id'=>'state','placeholder'=>'State','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
-                                {!! Form::label('zip_code', 'Postal Code') !!}
-                                {!! Form::text('zip_code', $value = null, ['id'=>'zip_code','placeholder'=>'Zip Code','class'=>'form-control']) !!}
+                            <div class="form-group required">
+                                {!! Form::label('zip_code', 'Postal Code',['class'=>'control-label']) !!}
+                                {!! Form::text('zip_code', $value = null, ['id'=>'zip_code','placeholder'=>'Zip Code','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
-                                {!! Form::label('phone', 'Phone Number') !!}
-                                {!! Form::text('phone', $value = null, ['id'=>'phone','placeholder'=>'Phone Number','class'=>'form-control']) !!}
+                            <div class="form-group required">
+                                {!! Form::label('phone', 'Phone Number',['class'=>'control-label']) !!}
+                                {!! Form::text('phone', $value = null, ['id'=>'phone','placeholder'=>'Phone Number','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
-                                {!! Form::label('email', 'Email') !!}
-                                {!! Form::email('email', $value = null, ['id'=>'email','placeholder'=>'Email','class'=>'form-control']) !!}
+                            <div class="form-group required">
+                                {!! Form::label('email', 'Email',['class'=>'control-label']) !!}
+                                {!! Form::email('email', $value = null, ['id'=>'email','placeholder'=>'Email','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>
@@ -104,19 +108,19 @@
 
                     <div class="row" id="shipping_detail">
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
+                            <div class="form-group required">
                                 {!! Form::label('ship_company_name', 'Company Name') !!}
                                 {!! Form::text('ship_company_name', $value = null, ['id'=>'text','placeholder'=>'Company Name','class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
+                            <div class="form-group required">
                                 {!! Form::label('ship_name', 'Name') !!}
                                 {!! Form::text('ship_name', $value = null, ['id'=>'name','placeholder'=>'Name','class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
+                            <div class="form-group required">
                                 {!! Form::label('ship_address_line_1', 'Address Line 1') !!}
                                 {!! Form::text('ship_address_line_1', $value = null, ['id'=>'ship_address_line_1','placeholder'=>'Address Line','class'=>'form-control']) !!}
 
@@ -130,42 +134,42 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
+                            <div class="form-group  required">
                                 {!! Form::label('ship_country', 'Country') !!}
                                 {!! Form::text('ship_country', $value = null, ['id'=>'country','placeholder'=>'Country','class'=>'form-control']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
+                            <div class="form-group  required">
                                 {!! Form::label('ship_city', 'City') !!}
                                 {!! Form::text('ship_city', $value = null, ['id'=>'city','placeholder'=>'City','class'=>'form-control']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
+                            <div class="form-group  required">
                                 {!! Form::label('ship_state', 'State') !!}
                                 {!! Form::text('ship_state', $value = null, ['id'=>'state','placeholder'=>'State','class'=>'form-control']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
+                            <div class="form-group  required">
                                 {!! Form::label('ship_zip_code', 'Postal Code') !!}
                                 {!! Form::text('ship_zip_code', $value = null, ['id'=>'zip_code','placeholder'=>'Zip Code','class'=>'form-control']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
+                            <div class="form-group  required">
                                 {!! Form::label('ship_phone', 'Phone Number') !!}
                                 {!! Form::text('ship_phone', $value = null, ['id'=>'phone','placeholder'=>'Phone Number','class'=>'form-control']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group">
+                            <div class="form-group  required">
                                 {!! Form::label('ship_email', 'Email') !!}
                                 {!! Form::email('ship_email', $value = null, ['id'=>'email','placeholder'=>'Email','class'=>'form-control']) !!}
 

@@ -130,7 +130,16 @@ class CheckoutController extends Controller
                 $phone =  $all['phone'];
                 $city =  $all['city'];
 
-                $data = compact('random_token','email','address1','address2','name','phone','city');
+                $data = compact('random_token','email','address1','address2','name','phone','city','frontendHelper');
+                $data['frontend_helper'] = $frontendHelper;
+                $data['settings'] = GlobalSetting::where('id', 1)->first();
+                $data['categories'] = ProductCategory::where('parent_id', null)->where('status', 1)->orderBy('position', 'ASC')->get();;
+                $data['menus'] = Navigation::where('nav_category', 'Main')->where('parent_page_id', 0)->get();
+        
+                $data['carts'] = Cart::content();
+                $data['subTotal'] = Cart::subtotal();
+                $data['total'] = Cart::total();
+                $data['tax'] = Cart::tax();
                 return view('website.checkout.thankYou')->with($data);
             }else{
 
