@@ -22,15 +22,17 @@
 
                     <div class="success">
                         <h2 class="title">Thank you for the Purchase</h2>
-                        <div class="orderNum">Your order number is <span>RM2100001</span></div>
+                        <div class="orderNum">Your order number is <span>ATC22{{$random_token}}</span></div>
                         <h4>SHIPPING ADDRESS</h4>
                         <ul>
-                            <li>Avinesh Shakya</li>
-                            <li>shakyaavinesh@gmail.com</li>
-                            <li></li>
-                            <li>patan</li>
-                            <li>Mobile: <span>9843802891</span></li>
+                            <li>Name       : {{$name}}  </li>
+                            <li>Email      : {{$email}}  </li>
+                            <li>City      : {{$city}}  </li>
+                            <li>Address 1  : {{$address1}}  </li>
+                            <li>Address 2  : {{$address2}}  </li>
+                            <li>Mobile: <span>{{$phone}}</span></li>
                         </ul>
+                       
                         <div class="shop mt-5"><a href="{{route('website.home')}}" class="button-primary">Continue Shopping</a></div>
                     </div>
 

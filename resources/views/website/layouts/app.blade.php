@@ -77,6 +77,16 @@
              style="position: absolute;height: 100%;width:100%;z-index:99 "></div>
         @endif
 
+        @if($message = Session::get('error'))
+        {{-- <div class=" container alert alert-danger">
+            {{$message}} <br>
+        </div> --}}
+
+        <div class="container">
+            <p class="alert alert-danger">{{$message}}</p>
+        </div>
+        
+    @endif
 
    
     @yield('content')

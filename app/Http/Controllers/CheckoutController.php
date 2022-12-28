@@ -69,20 +69,29 @@ class CheckoutController extends Controller
 
             $orderStatus = OrderStatus::where('title', 'initial')->first();
 
-            $all['status_id'] = $orderStatus->id;
+            // $all['status_id'] = $orderStatus->id;
+            $all['status_id'] = 0;
 
 
             $all['sub_total'] = Cart::subtotal();
             $all['total'] = Cart::subtotal();
             $all['tax'] =  0 /*Cart::tax()*/;
 
-
+            // Random Order Token generation
+            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $charactersLength = strlen($characters);
+            $randomString = '';
+            for ($i = 0; $i < 5; $i++) {
+                $randomString .= $characters[rand(0, $charactersLength - 1)];
+            }
+            $all['invoice_id'] = $randomString;
             $order = Order::create($all);
+
             $data['orderAddress'] = $order;
             $all['order_id'] = $order->id;
 
             $all['type'] = 'billing';
-             
+            
             
             $data['orderAddress'] = OrderAddress::create($all);
 
@@ -113,7 +122,16 @@ class CheckoutController extends Controller
                 $superAdmin = Admin::findOrFail(1);
                 $superAdmin->notify(new NewOrder($order));
 
-                 return view('website.checkout.thankYou', $data);
+                $random_token = $randomString;                
+                $email =  $all['email'];
+                $address1 =  $all['address_line_1'];
+                $address2=  $all['address_line_2'];
+                $name =  $all['name'];
+                $phone =  $all['phone'];
+                $city =  $all['city'];
+
+                $data = compact('random_token','email','address1','address2','name','phone','city');
+                return view('website.checkout.thankYou')->with($data);
             }else{
 
             }

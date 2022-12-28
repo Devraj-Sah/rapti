@@ -43,8 +43,9 @@
                                         <td>{{$order->invoice_id }}</td>
                                         <td>{{$order->orderAddress->first()->name}}</td>
                                         <td>{{$order->orderAddress->first()->email}}</td>
+                                        <td>{{$order->first()->status_id}}</td>
                                         <td>{{$order->orderAddress->first()->created_at}}</td>
-                                        <td>{{$order->orderStatus->title}}</td>
+                                        {{-- <td>{{$order->orderStatus->title}}</td> --}}
 
                                         <td>
                                             <a href="{{route('order.show',['id'=>$order->id])}}" title="edit"
