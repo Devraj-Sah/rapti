@@ -70,7 +70,8 @@
                                                 class="text desc info multiply">Qty:</span><span
                                                 class="text">&nbsp;{{$orderProduct->qty}}</span></span></div>
                                 <div class="item-status item-capsule"></div>
-                                <div class="item-info"><p class="text delivery-success">Delivered on 14 Nov 2020</p>
+                                <div class="item-info">
+                                    {{-- <p class="text delivery-success">Delivered on 14 Nov 2020</p> --}}
                                 </div>
 
                             </div>
@@ -83,12 +84,34 @@
                         <div class="col-md-6 col-sm-12">
                             <div style="border: 1px solid #ddd; padding: 15px">
                                 <h3>Billing Address</h3>
-
-                                <p>{{$order->orderAddress->name}} <br>
-                                    {{$order->orderAddress->address}} ,{{$order->orderAddress->city}}
-                                    , {{$order->orderAddress->district}}, {{$order->orderAddress->zip_code}} <br>
-                                    {{$order->orderAddress->mobile}}
-                                </p>
+                                <div class="row" style="justify-content: space-between">
+                                    <div class="col-md-6">Name</div>
+                                    <div class="col-md-6">{{$order->orderAddress->name}} </div>
+                                </div>
+                                <div class="row" style="justify-content: space-between">
+                                    <div class="col-md-6">Address 1</div>
+                                    <div class="col-md-6">{{$order->orderAddress->address_line_1}}</div>
+                                </div>
+                                <div class="row" style="justify-content: space-between">
+                                    <div class="col-md-6">Address 2</div>
+                                    <div class="col-md-6">{{$order->orderAddress->address_line_2}}</div>
+                                </div>
+                                <div class="row" style="justify-content: space-between">
+                                    <div class="col-md-6">City</div>
+                                    <div class="col-md-6">{{$order->orderAddress->city}}</div>
+                                </div>
+                                <div class="row" style="justify-content: space-between">
+                                    <div class="col-md-6">Discrict</div>
+                                    <div class="col-md-6">{{$order->orderAddress->city}}</div>
+                                </div>
+                                <div class="row" style="justify-content: space-between">
+                                    <div class="col-md-6">Zip Code</div>
+                                    <div class="col-md-6">{{$order->orderAddress->zip_code}}</div>
+                                </div>
+                                <div class="row" style="justify-content: space-between">
+                                    <div class="col-md-6">Mobile</div>
+                                    <div class="col-md-6">{{$order->orderAddress->phone}}</div>
+                                </div>                            
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12">

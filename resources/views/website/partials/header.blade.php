@@ -73,8 +73,6 @@
                         {!! Form::open(['route'=>'search.products','method'=>'get']) !!}
                         <div class="search-box-border">
                             <div class="header_select_cata">
-
-
                                 <input class="search-input form-control " name="q"  placeholder="Search Product" />
                             </div>
 

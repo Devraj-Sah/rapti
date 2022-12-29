@@ -131,13 +131,13 @@
                         <h3 class="widget-title links-title">COMPANY</h3>
                         <ul class="product-categories">
 
-                            <li class="cat-item cat-item-5"><a href="http://localhost/test-project/category/aciform/">Shipping and Delivery</a>
+                            <li class="cat-item cat-item-5"><a href="#">Shipping and Delivery</a>
                             </li>
                             <li class="cat-item cat-item-6"><a
-                                        href="http://localhost/test-project/category/antiquarianism/">About</a>
+                                        href="{{ route('website.contact-us')}}">About</a>
                             </li>
                             <li class="cat-item cat-item-7"><a
-                                        href="http://localhost/test-project/category/arrangement/">Top Pics</a>
+                                        href="#">Top Pics</a>
                             </li>
 
 
@@ -154,7 +154,7 @@
                             </li>
                             <li class="cat-item cat-item-6"><a href="#">How to Buy</a>
                             </li>
-                            <li class="cat-item cat-item-7"><a href="#">Track Your Order</a>
+                            <li class="cat-item cat-item-7"><a href="{{  route('user.myOrders') }}">Track Your Order</a>
                             </li>
                             <li class="cat-item cat-item-8"><a href="#">Returns & Refunds</a>
                             </li>
@@ -172,15 +172,15 @@
                         <h3 class="widget-title links-title">POLICIES</h3>
                         <ul class="product-categories">
 
-                            <li class="cat-item cat-item-5"><a href="http://localhost/test-project/category/aciform/">TERMS
+                            <li class="cat-item cat-item-5"><a href="#">TERMS
                                     AND CONDITIONS</a>
                             </li>
                             <li class="cat-item cat-item-6"><a
-                                        href="http://localhost/test-project/category/antiquarianism/">RETURN AND
+                                        href="#">RETURN AND
                                     REPLACEMENT POLICY</a>
                             </li>
                             <li class="cat-item cat-item-7"><a
-                                        href="http://localhost/test-project/category/arrangement/">PRIVACY POLICY</a>
+                                        href="#">PRIVACY POLICY</a>
                             </li>
 
 
@@ -192,11 +192,11 @@
                         <h3 class="widget-title links-title">Get Help</h3>
                         <ul class="product-categories">
 
-                            <li class="cat-item cat-item-5"><a href="http://localhost/test-project/category/aciform/">FAQ
+                            <li class="cat-item cat-item-5"><a href="#">FAQ
                                     Section</a>
                             </li>
                             <li class="cat-item cat-item-6"><a
-                                        href="http://localhost/test-project/category/antiquarianism/">Report the
+                                        href="#">Report the
                                     Incident</a>
                             </li>
 
@@ -210,7 +210,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <p class="left">© 20210 AllRight Reserved. Aadit Trading Pvt Ltd.  Powered by <a href="#">
+                    <p class="left">©{{date('Y')}} AllRight Reserved. Aadit Trading Pvt Ltd.  Powered by <a href="#">
                             Radiant InfoTech
                         </a>
 

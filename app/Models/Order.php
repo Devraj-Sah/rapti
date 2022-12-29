@@ -37,7 +37,6 @@ class Order extends Model
         return $this->belongsTo(OrderStatus::class, 'status_id');
     }
 
-
     public function orderAddress()
     {
         return $this->hasOne(OrderAddress::class);

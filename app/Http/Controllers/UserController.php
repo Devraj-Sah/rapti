@@ -140,8 +140,6 @@ class UserController extends Controller
             $orders->deleted_at = Carbon::now();
             $orders->save();
         }
-        // return redirect()->back()->with('success', 'Order Cancled Succesfully !!!');
-
         return redirect()->route('user.myOrders')->with('success', 'Order Cancled Succesfully !!!');
     }
 
