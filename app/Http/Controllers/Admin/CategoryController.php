@@ -27,6 +27,7 @@ class CategoryController extends Controller
 
     public function create()
     {
+     
        $current_max_position = ProductCategory::max('position');
         $next_position = $current_max_position + 1;
         return view('admin.cart.categories.create',[
@@ -37,6 +38,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        // return $data;
 
         $this->validate($request, [
             'name'=>'required',
@@ -61,7 +63,8 @@ class CategoryController extends Controller
             $data['thumbnail'] = $imageName;
         }
         $data['slug'] = Str::slug($request->name);
-        $this->model->create($data);
+        $this->model::updateOrCreate(['code' => $request->code],$data);
+        // $this->model->create($data);
         return redirect()->route('product-categories.index')->with('message','Record was successfully saved!!');
     }
 

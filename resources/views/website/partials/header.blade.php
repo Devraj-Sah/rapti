@@ -53,7 +53,7 @@
                     <div class="logo site-branding">
 
                         <a @if(\Illuminate\Support\Facades\Auth::check())
-                           href="{{url('/home')}}"
+                           href="{{url('/')}}"
                            @else
                            href="{{url('/')}}"
                            @endif class="custom-logo-link">   @if($settings->site_logo)
