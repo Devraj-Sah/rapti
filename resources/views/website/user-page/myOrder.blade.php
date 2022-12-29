@@ -69,7 +69,8 @@
                                                     class="text">&nbsp;{{$orderProduct->qty}}</span></span></div>
                                     <div class="item-status item-capsule"><p
                                                 class="capsule">{{$order->orderStatus->title}}</p></div>
-                                    <div class="item-info"><p class="text delivery-success">Delivered on 14 Nov 2020</p>
+                                    <div class="item-info">
+                                        {{-- <p class="text delivery-success">Delivered on 14 Nov 2020</p> --}}
                                     </div>
 
                                 </div>

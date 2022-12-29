@@ -303,5 +303,6 @@ Route::group(['middleware' => ['web'], 'prefix' => 'user'], function() {
     Route::post('changePassword', 'UserController@updatePassword')->name('user.account.updatePassword');
 
     Route::get('myOrders', 'UserController@myOrders')->name('user.myOrders');
-    Route::get('user/{orderId}/myOrders/', 'UserController@orderDetail')->name('user.orderDetail');
+    Route::get('{orderId}/myOrders/', 'UserController@orderDetail')->name('user.orderDetail');
+    Route::get('{orderId}/cancleOrder/', 'UserController@cancleOrder')->name('user.cancleOrder');
 });

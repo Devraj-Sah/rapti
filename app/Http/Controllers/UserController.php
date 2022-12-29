@@ -9,11 +9,12 @@ use App\Models\GlobalSetting;
 use App\Models\Order;
 use App\User;
 use Illuminate\Http\Request;
-
+use Carbon\Carbon;
 use Hash;
 use App\Models\Navigation;
 use Cart;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -90,7 +91,7 @@ class UserController extends Controller
 
     public function myOrders( FrontendHelper $frontendHelper, ProductHelper $productHelper)
     {
-        $orders = Order::where('customer_id',Auth::user()->id )->get();
+        $orders = Order::where('customer_id',Auth::user()->id )->orderBy('created_at','devraj')->get();
 
         $settings = GlobalSetting::where('id', 1)->first();
         $menus = Navigation::where('nav_category', 'Main')->where('parent_page_id', 0)->get();
@@ -106,11 +107,12 @@ class UserController extends Controller
         ]);
 
 
-        return view('website.user-page.myOrder', compact('change_profile'));
+        // return view('website.user-page.myOrder', compact('change_profile'));
     }
 
     public function orderDetail(Request $request, FrontendHelper $frontendHelper, ProductHelper $productHelper)
     {
+
         $orderId = $request->orderId;
         $order = Order::findOrFail($orderId);
 
@@ -128,7 +130,19 @@ class UserController extends Controller
         ]);
 
 
-        return view('website.user-page.orderDetail', compact('change_profile'));
+        // return view('website.user-page.orderDetail', compact('change_profile'));
+    }
+    public function cancleOrder(Request $request, FrontendHelper $frontendHelper, ProductHelper $productHelper,$order_id)
+    {
+        $user_id = Auth::user()->id;
+        $orders = Order::where('id',$order_id)->first();
+        if ($user_id === $orders->customer_id) {
+            $orders->deleted_at = Carbon::now();
+            $orders->save();
+        }
+        // return redirect()->back()->with('success', 'Order Cancled Succesfully !!!');
+
+        return redirect()->route('user.myOrders')->with('success', 'Order Cancled Succesfully !!!');
     }
 
     public function change_profile()

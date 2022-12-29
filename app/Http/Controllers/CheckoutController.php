@@ -69,8 +69,8 @@ class CheckoutController extends Controller
 
             $orderStatus = OrderStatus::where('title', 'initial')->first();
 
-            // $all['status_id'] = $orderStatus->id;
-            $all['status_id'] = 0;
+            $all['status_id'] = $orderStatus->id;
+            // $all['status_id'] = 0;
 
 
             $all['sub_total'] = Cart::subtotal();

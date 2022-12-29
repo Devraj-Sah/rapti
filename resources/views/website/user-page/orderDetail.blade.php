@@ -44,7 +44,7 @@
                                 <p class="text info desc">Placed on {{$order->created_at}}</p>
                             </div>
                             <div>
-                                <a href="#" class="pull-right link manage"
+                                <a href="{{route('user.cancleOrder',[$order->id])}}" class="pull-right link manage"
                                    style="color: rgb(26, 156, 183);">Cancel Order</a>
                             </div>
 

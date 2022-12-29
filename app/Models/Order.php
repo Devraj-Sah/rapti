@@ -28,7 +28,7 @@ class Order extends Model
     public function setInvoiceIdAttribute($maxId)
     {
         $compcode = "ATC";
-        $result = $compcode . date('y') . str_pad($maxId, 5, "0", STR_PAD_LEFT);
+        $result = $compcode . '22' . str_pad($maxId, 5, "0", STR_PAD_LEFT);
         $this->attributes['invoice_id'] = $result;
     }
 
