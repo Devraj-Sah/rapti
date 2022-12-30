@@ -5,7 +5,9 @@ namespace App\Helpers;
 
 use App\Models\Navigation;
 use App\Models\Product;
+use App\Models\Order;
 use App\Models\ProductCategory;
+use Illuminate\Support\Facades\Auth;
 
 class FrontendHelper
 {
@@ -38,6 +40,11 @@ class FrontendHelper
     public function getAllCategories()
     {
         return ProductCategory::where('parent_id',0)->get();
+    }
+
+    public function getnotification()
+    {
+        return count(Order::where('customer_id',Auth::user()->id )->where('is_notify',1)->get());
     }
 
     public function getProducts()

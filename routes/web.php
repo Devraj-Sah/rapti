@@ -299,6 +299,8 @@ Route::group(['middleware' => ['web'], 'prefix' => 'user'], function() {
 
     Route::get('account', 'UserController@myAccount')->name('user.account');
     Route::post('account', 'UserController@updateInformation')->name('user.account.update');
+    Route::get('removenotifications/{orderID}', 'UserController@removenotifications')->name('user.removenotifications');
+
     Route::get('changePassword', 'UserController@changePassword')->name('user.account.changePassword');
     Route::post('changePassword', 'UserController@updatePassword')->name('user.account.updatePassword');
 

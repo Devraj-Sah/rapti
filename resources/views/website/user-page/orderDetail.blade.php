@@ -24,9 +24,10 @@
                                         Information</a></li>
                                 <li class="active"><a href="{{route('user.myOrders')}}"><i
                                                 class="fa fa-shopping-cart"></i>My Order</a></li>
+                                {{-- <li><a href="{{route('user.notifications')}}"><i class="fa fa-bell"></i>Notifications</a></li> --}}
                                 <li><a href="{{route('user.account.changePassword')}}"><i class="fa fa-lock"></i>Change
                                         Password</a></li>
-                                <li><a href="{{route('user.logout')}}"><i class="fa fa-sign-out"></i>Sign Out</a></li>
+                                <li><a href="{{route('user.logout')}}"><i class="fa fa-exclamation"></i>&nbspSign Out</a></li>
                             </ul>
                         </div>
                     </div>

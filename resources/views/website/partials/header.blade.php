@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <div class="col-md-2 col-sm-12">
-                    <div class="htStore_ecommerce_extra_button">
+                    <div class="htStore_ecommerce_extra_button" style="display: flex; flex-direction:row-reverse">
                         <div class="hitStore_user_account">
                             <div class="hitStore_user_account_icon">
                                 <span><i class="fa fa-user"></i></span>
@@ -133,6 +133,36 @@
                                 </span>
                             </div>
                         </div>
+                        @php $total_notifications = $frontend_helper->getnotification() @endphp
+                        <style>
+                            .hitStore_notification{
+                                cursor: pointer;
+                                width: 60px;
+                                text-align: center;
+                                line-height: 2.5;
+                                position: relative;
+                                font-size: 45px;
+                                color: #15273a;
+                            }
+                            .devnot{
+                                top: 20px;
+                                right: -7px;
+                            }
+                        </style>
+                        @if($total_notifications == 1)
+                        <a href="{{ route('user.myOrders')}}">
+                            <div class="hitStore_notification">
+                                <div class="hitStore_notification_icon">
+                                    <span><i class="icofont-notification"></i></i>
+                                            <div class="cart_count devnot">
+                                                {{$total_notifications}}
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        @endif
+
 
                     </div>
                 </div>

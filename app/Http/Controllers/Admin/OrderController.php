@@ -90,6 +90,10 @@ class OrderController extends Controller
             $order = $this->model->findOrFail($input['order_id']);
 
             $order->status_id = $input['status_id'];
+            if ($input['is_notified'] == 1){
+                $order->is_notify = 1;
+            }
+            $order->messages = $input['message'];
             $order->save();
 
             return redirect()->back()->with('success','Status was successfully saved!!');

@@ -42,6 +42,18 @@ class UserController extends Controller
         ]);
     }
 
+    public function removenotifications(Request $request,FrontendHelper $frontendHelper, CategoryHelper $categoryHelper, ProductHelper $productHelper)
+    {
+        $orderId = $request->orderID;
+        $orders = Order::where('id',$orderId)->first();
+        $user_id = Auth::user()->id;
+        if ($user_id === $orders->customer_id) {
+            $orders->is_notify = 0;
+            $orders->save();
+        }
+        return redirect()->back()->with('success', 'Notification Removed');
+    }
+
     public function updateInformation(Request $request)
     {
         $user = User::findOrFail(Auth::user()->id);
@@ -92,7 +104,8 @@ class UserController extends Controller
     public function myOrders( FrontendHelper $frontendHelper, ProductHelper $productHelper)
     {
         $orders = Order::where('customer_id',Auth::user()->id )->orderBy('created_at','devraj')->get();
-
+        $Countorders = count(Order::where('customer_id',Auth::user()->id )->where('is_notify',1)->get());
+        // return $Countorders;
         $settings = GlobalSetting::where('id', 1)->first();
         $menus = Navigation::where('nav_category', 'Main')->where('parent_page_id', 0)->get();
         $carts = Cart::content();
@@ -103,7 +116,8 @@ class UserController extends Controller
             'settings' => $settings,
             'menus' => $menus,
             'carts' => $carts,
-            'orders'=>$orders
+            'orders'=>$orders,
+            'Countorders'=>$Countorders
         ]);
 
 
