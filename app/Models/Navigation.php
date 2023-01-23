@@ -52,4 +52,5 @@ class Navigation extends Model
     {
         return $this->belongsTo('App\Models\Navigation','parent_page_id','id') ;
     }
+    
 }

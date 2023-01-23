@@ -33,7 +33,10 @@
                                 <div class="hitStore_slider_content banner_content_left left">
                                     <h3>{{$item->name}}</h3>
                                     <div class="hitStore_slider_button">
-                                        <a href="{{route('product.list.home')}}">Shop Now Via Our catalogue</a>
+                                        <a href="{{route('product.list.home')}}">Shop Now Via Rapti Fashion Fall-2022</a>
+                                    </div>
+                                    <div class="hitStore_slider_button mt-4">
+                                        <a href="{{route('product.list.home')}}">Shop Now Via Rapti Fashion Spring-2022</a>
                                     </div>
                                 </div>
                             </div>

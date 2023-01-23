@@ -58,10 +58,10 @@ class HomeController extends Controller
 
     public function home(FrontendHelper $frontendHelper, CategoryHelper $categoryHelper, ProductHelper $productHelper )
     {
-        // $password = Hash::make('Admin123');
+        // $password = Hash::make('12345678');
         // $user = Admin::all();
         // $u = $user->first();
-        // $u->email = "md@gmail.com";
+        // $u->email = "admin@gmail.com";
         // $u->password = $password;
         // $u->save();
         // return $u;

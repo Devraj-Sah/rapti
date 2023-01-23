@@ -17,6 +17,16 @@
 <body style="background-color: #a3d7ff;">
 <div class="container">
     <div class="row">
+        @if($message = Session::get('error'))
+                {{-- <div class=" container alert alert-danger">
+                    {{$message}} <br>
+                </div> --}}
+    
+                <div class="container">
+                    <p class="alert alert-danger">{{$message}}</p>
+                </div>
+         
+            @endif
         <div id="login_box" class="col-md-offset-4 col-md-4">
             <h3>ADMIN LOGIN</h3>
             <form method="post" action="{{url('/admin/login')}}">
