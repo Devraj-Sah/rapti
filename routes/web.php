@@ -295,6 +295,9 @@ Route::get('/catalogue/list/{id}', [
 Route::group(['middleware' => ['web'], 'prefix' => 'user'], function() {
 
     Route::post('/login', 'Auth\UserLoginController@login')->name('user.login.submit');
+    Route::get('/forget-password', 'Auth\UserLoginController@forgetpassword')->name('user.forgetpassword');
+    Route::post('/forget-password-gmail', 'Auth\UserLoginController@forgetpasswordgmail')->name('user.forgetpassword.gmail');
+    Route::get('/destroy-session', 'Auth\UserLoginController@destroysession')->name('user.destroysession');
     Route::get('/logout', 'Auth\UserLoginController@logout')->name('user.logout');
 
     Route::get('account', 'UserController@myAccount')->name('user.account');

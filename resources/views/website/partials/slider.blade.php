@@ -1,23 +1,5 @@
 <section class="hitStore_category_with_banner">
 
-    @if (count($errors) > 0)
-        <div class="container alert alert-danger">
-            @foreach ($errors->all() as $error)
-            {{ $error }}  <br>           
-            @endforeach         
-        </div>
-        <br>
-    @endif
-
-     
-
-
-    @if(Session::has('success'))
-        <div class="container">
-            <p class="alert alert-info">{{ Session::get('success') }}</p>
-        </div>
-    @endif
-
     <div class="container">
         <div style="background: #FFF;">
             <div class="row no-gutters">

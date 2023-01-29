@@ -301,9 +301,9 @@
                         <label for="name">Password</label>
                         <input type="password" class="form-control" id="password" name="password" placeholder="password" required>
                     </div>
-                    <button type="submit" id="complete-order" class="button-primary">Login </button>
-
-
+                    <a href="#ForgetModal" data-toggle="modal" data-target="#ForgetModal"  class="hitStore_signIn_button"><span class="text text-danger mt-5">Forget Password ?</span></a>
+                    
+                    <button type="submit" id="complete-order" class="button-primary" style="float: right">Login </button>
                 </form>
 
 
@@ -311,6 +311,108 @@
         </div>
     </div>
 </div>
+
+{{-- Forget Password --}}
+<div class="modal fade" id="ForgetModal" tabindex="-1" aria-labelledby="ForgetModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ForgetModalLabel">Password Recovery</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{route('user.forgetpassword')}}" method="GET" >
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    </div>                    
+                    
+                    <button type="submit" id="complete-order" class="button-primary" style="float: right">Send token</button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{{-- Enter password --}}
+<div class="modal fade" id="enterresetpas" tabindex="-1" aria-labelledby="enterresetpas" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="enterresetpasLabel">Password Recovery</h5>
+                <button type="button" class="close close-reset" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="width: auto; display:flex; justify-content:space-between ">
+                    @if(Session::get('errors'))
+                        <p class="alert alert-danger" style="width: 60%">                            
+                                @foreach ($errors->all() as $error)
+                                {{ $error }}  <br>           
+                                @endforeach                                                                                 
+                        </p>
+                    @endif
+                    @if($message = Session::get('sent_mail'))
+                    <p class="alert alert-danger" style="width: 60%">                        
+                            {{$message}}                               
+                    </p>
+                    @endif
+                        <a href="{{route('user.forgetpassword', ['email' => Session::get('tempemail'),'again'=>'true'])}}">
+                            <span class="badge bg-info p-2" style="color: white; margin-top:7px; margin-bottom:16px;"> 
+                                send token again 
+                            </span>
+                        </a>
+                    </div>         
+                <form action="{{route('user.forgetpassword.gmail')}}" method="POST" >
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <label for="token">Token sent to email</label>
+                        <input type="text" class="form-control" id="email" name="token" placeholder="Token" required>
+                    </div> 
+                    <div class="form-group">
+                        <label for="password">New Password</label>
+                        <input type="password" class="form-control" id="email" name="password" placeholder="New Password" required>
+                    </div>           
+                    <div class="form-group">
+                        <label for="confirm password"> Confirm Password</label>
+                        <input type="password" class="form-control" id="email" name="password_confirmation" placeholder="Confirm Password" required>
+                    </div>              
+                    
+                    <button type="submit" id="complete-order" class="button-primary" style="float: right">Submit</button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+@if(Session::has('token'))
+    <script>  
+            $('#enterresetpas').css('display','block');
+    </script>
+@endif
+<script>
+    $('.close-reset').click(function() {
+        if (confirm("Are you sure to Cancle Process ?")) {
+            $.ajax({
+            url: '/user/destroy-session',
+            type: 'GET',
+            success: function(result) {
+                if (result.success) {
+                    // console.log('Session destroyed successfully');
+                    location.reload();
+                }
+            }
+        });    
+        } 
+});
+</script>
+
 <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">

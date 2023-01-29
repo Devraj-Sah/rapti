@@ -7,6 +7,10 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Cart;
+use App\Mail\forgetPassowrdMailer;
+use Illuminate\Support\Facades\Mail;
+use App\User;
+use Hash;
 
 class UserLoginController extends Controller
 {
@@ -38,6 +42,53 @@ class UserLoginController extends Controller
         }
 
         return redirect()->back()->with('error', 'email and password doesnot match');
+    }
+
+    public function forgetpassword(Request $request){
+        $this->validate($request, [
+            'email' => 'required',
+        ]);
+        $email = $request->email;
+        if(!isset($request->again))
+        {
+            $token = rand(100000,999999);
+            session()->put('token',$token);
+            session()->put('tempemail',$request->email);
+        }
+        else{
+            $token = session()->get('token');
+        }
+        $data = compact('token','email');
+        Mail::to($request->email)->send(new forgetPassowrdMailer($data));
+    	if($data){
+    		return redirect()->back()->with('sent_mail',"Please Check your Mail !!!");
+    	}
+    	//return redirect()->back()->with('error',"token sent successfully");
+       
+    }
+
+    public function forgetpasswordgmail(Request $request){
+        $this->validate($request, [
+            'token' => 'required',
+            'password' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required'
+        ]);
+        if($request->token == session()->get('token')){
+            $user = User::where('email',session()->get('tempemail'))->first();
+            $user->fill([
+                'password' => Hash::make($request->password)
+            ])->save();
+            $this->destroysession();
+            return redirect()->back()->with('success', 'Password Changed Please Login !');
+        }
+        else{
+    		return redirect()->back()->with('sent_mail',"Token Not Matched !!!");
+        }
+    }
+    public function destroysession(){
+        session()->forget('token');
+        return response()->json(['success' => true]);
+       
     }
 
     public function signUp(Request $request){
