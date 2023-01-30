@@ -232,7 +232,7 @@
 
                     {{--@if(\Illuminate\Support\Facades\Auth::check())--}}
                     <li>
-                        <a href="{{route('product.list.home')}}">Products</a>
+                        <a href="{{route('product.list.home')}}">Categories</a>
                         {{--<ul class="sub-menu">
 
                             @foreach($categories as $category)

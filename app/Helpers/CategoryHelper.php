@@ -8,12 +8,25 @@ use App\Models\ProductCategory;
 class CategoryHelper
 {
 
+    public function getCategoriesForNavigationDropdown()
+    {
+        $categories = ProductCategory::whereNull('parent_id')->get();;
+        return $categories->pluck('name', 'id');
+    }
     public function getCategoriesForDropdown()
+    {
+        $categories = ProductCategory::whereNotNull('parent_id')->get();;
+        return $categories->pluck('name', 'id');
+    }
+    public function getCategoriesForDropdownall()
     {
         $categories = ProductCategory::all();
         return $categories->pluck('name', 'id');
     }
 
+
+
+    
     public function getCatalogueForDropdown()
     {
         $catalogues = Catalogue::all();

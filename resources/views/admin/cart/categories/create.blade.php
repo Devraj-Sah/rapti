@@ -1,5 +1,5 @@
 @inject('category_helper','App\Helpers\CategoryHelper')
-<?php $categories = $category_helper->getCategoriesForDropdown() ?>
+<?php $categories = $category_helper->getCategoriesForNavigationDropdown() ?>
 @extends('admin.layout.master')
 @section('style')
     <style>
@@ -38,7 +38,7 @@
                     <div class="col-md-9" style="padding-top: 10px;">
                         <div class="form-group col-md-4">
                             <label>Parent ID </label>
-                            {{ Form::select('parent_id',['select']+$categories->toArray(),null,['class' => 'form-control']) }}
+                            {{ Form::select('parent_id',['select']+$categories->toArray(),$model->category_id,['class' => 'form-control']) }}
                         </div>
 
 

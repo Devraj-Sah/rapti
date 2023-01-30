@@ -196,6 +196,7 @@ class NavigationController extends Controller
         $navigation = Navigation::find($id);
         $parent_id = (intval($navigation->parent_page_id) == 0)?'':'/'.intval($navigation->parent_page_id);
 //        $navigation = Navigation::find($id);
+        $data['parent_page_id'] = $navigation->parent_page_id;
 
         if($request->hasFile('icon_image')){
             if(file_exists(public_path('uploads/icon_image').'/'.$navigation->icon_image)){

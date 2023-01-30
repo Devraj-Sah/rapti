@@ -1,5 +1,5 @@
 @inject('category_helper','App\Helpers\CategoryHelper')
-<?php $categories = $category_helper->getCategoriesForDropdown() ?>
+<?php $categories = $category_helper->getCategoriesForNavigationDropdown() ?>
 @extends('admin.layout.master')
 @section('style')
     <style>

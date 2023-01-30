@@ -81,10 +81,16 @@
                                                    data-id="{{$category->id}}" {{($category->status == 1)?'checked':''}} />
                                         </td>
                                         <td>
+                                            @if (!isset($category->parents))
+                                                <a href="{{route('main-categories',$category->id)}}" title="edit"
+                                                    class="edit_btn">
+                                                    <button class="btn btn-info" style="margin-bottom:5px">Open</button>
+                                                </a>  <br>                                              
+                                            @endif
                                             <a href="{{route('product-categories.edit',$category->id)}}" title="edit"
                                                class="edit_btn">
-                                                <button class="btn btn-warning">Edit</button>
-                                            </a>
+                                                <button class="btn btn-warning" style="margin-bottom:5px">Edit</button>
+                                            </a><br>
                                             {!! Form::open([
                                                    'method' => 'DELETE',
                                                    'route' => ['product-categories.destroy', $category->id]
@@ -115,7 +121,9 @@
 
     <script>
         $('.add').click(function () {
-            var url = '<?=url()->full();?>' + '/create';
+            // var url = '<?=url()->full();?>' + '/create';
+            var currentUrl = window.location.origin;
+            var url = currentUrl + '/admin/product-categories/create';
             window.location = url;
         });
     </script>

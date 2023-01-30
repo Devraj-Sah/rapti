@@ -113,7 +113,10 @@
                                 @endforeach
                                 <div id="dev" class="row" style="display: flex; justify-content:center; margin-top:15px">
                                     <div id="" >
-                                        <button class="rounded-5 evendev" style="border-radius: 30px">Open Catlog</button>
+                                        <button class="rounded-5 evendev open{{$loop->iteration}}" style="border-radius: 30px">Open Catlog</button>
+                                        <a href="{{route('category.pages',$frontend_helper->getCatlogSlugById($catalogueLatest->extra_three))}}">
+                                            <button class="rounded-5 evendev" style="border-radius: 30px">View Category</button>
+                                        </a>
                                     </div>
                                 </div>
                         </div>                
@@ -148,7 +151,7 @@
                     }
                 });
                 
-                $("#opencat1").click(function(){
+                $(".open1").click(function(){
                     // $(".overlay").show();
                     // alert(window.location.search)
                     $id = $("#iteration1").text();
@@ -156,7 +159,7 @@
                     window.location.href = currentUrl+"?id="+$id;
                 });
                 
-                $("#opencat2").click(function(){
+                $(".open2").click(function(){
                     $id = $("#iteration2").text();
                     var currentUrl = window.location.origin;
                     window.location.href = currentUrl+"?id="+$id;

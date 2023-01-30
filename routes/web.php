@@ -153,6 +153,7 @@ Route::group(['prefix' => config('frw.uri'),'middleware' =>  ['auth:admin'], 'gr
     Route::put('/product-categories/update-status/{id}', 'Admin\CategoryController@update_status')->name('update_status');
 
     Route::resource('product-categories', 'Admin\CategoryController');
+    Route::get('main-categories/{id}', 'Admin\CategoryController@main_categories')->name('main-categories');
 
     Route::resource('products', 'Admin\ProductController');
 
@@ -231,7 +232,7 @@ Route::any('category/{alias}', [
     'uses' => 'HomeController@getCategoryPages'
 ]);
 
-Route::any('product/list', [
+Route::any('product/list/{id?}', [
     'as' => 'product.list.home',
     'uses' => 'HomeController@getProducts'
 ]);

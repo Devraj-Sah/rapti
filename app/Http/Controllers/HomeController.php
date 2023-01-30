@@ -228,8 +228,12 @@ class HomeController extends Controller
         ]);
     }
 
-    public function getProducts( FrontendHelper $frontendHelper)
+    public function getProducts( FrontendHelper $frontendHelper, $id=NULL)
     {
+        // if ($id) {
+        //     # code...
+        //     return $id;
+        // }
         $settings = GlobalSetting::where('id', 1)->first();
         $carts  = Cart::content();
         $menus = Navigation::where('nav_category', 'Main')->where('parent_page_id', 0)->get();

@@ -19,7 +19,7 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $categories  = $this->model->all();
+        $categories  = $this->model->whereNull('parent_id')->get();
         return view('admin.cart.categories.index',[
             'categories' => $categories
         ]);
@@ -124,5 +124,13 @@ class CategoryController extends Controller
     {
         $data['status'] = $request->status;
         ProductCategory::where('id', $id)->update($data);
+    }
+
+    public function main_categories($id)
+    {
+        $categories  = $this->model->where('parent_id', $id)->get();
+        return view('admin.cart.categories.index',[
+            'categories' => $categories
+        ]);
     }
 }

@@ -1,3 +1,5 @@
+@inject('category_helper','App\Helpers\CategoryHelper')
+<?php $categories = $category_helper->getCategoriesForNavigationDropdown() ?>
 @extends('admin.layout.master')
 @section('style')
     <style>
@@ -75,6 +77,11 @@
                         <input class="form-control {{ $errors->has('caption') ? 'has-error' : '' }}" type="text"
                                id="caption" name="caption" placeholder="Caption" value="{{$navigation->caption}}"
                                required="required">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="position">Select Catlog<i class="reqr">*</i> </label>
+                        {{ Form::select('extra_three',['select']+$categories->toArray(),$navigation->extra_three,null,['class' => 'form-control']) }} 
+                        {{-- For Catlog id => extra_three --}}
                     </div>
 
                     @if($navigation->link || $navigation->page_type == 'Link')
