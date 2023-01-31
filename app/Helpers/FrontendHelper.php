@@ -36,10 +36,10 @@ class FrontendHelper
     {
         return Navigation::where('parent_page_id',$parent_id)->orderBy('id','desc')->first();
     }
-    public function getCatlogSlugById($id)
+    public function getCatlogSlugById($id,$column)
     {
         $row = ProductCategory::where('id',$id)->first();
-        return $row->slug;
+        return $row->$column;
     }
     // public function getallCatlog($parent_id) #devraj
     // {

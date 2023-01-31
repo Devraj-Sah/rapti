@@ -202,18 +202,26 @@ class HomeController extends Controller
         $carts  = Cart::content();
         $menus = Navigation::where('nav_category', 'Main')->where('parent_page_id', 0)->get();
         $categorySlug = ProductCategory::where('slug', $slug)->first();
-        $names = Product::pluck('name');
-
-        // $products = Product::where('category_id', $categorySlug->id)->get();
-        $categories = ProductCategory::where('parent_id', null)->where('status',1)->orderBy('position','ASC')->get();
-
         $categoryIds = ProductCategory::where('parent_id', $parentId = ProductCategory::where('id', $categorySlug->id)
             ->value('id'))
             ->pluck('id')
             ->push($parentId)
             ->all();
 
-       $products = Product::whereIn('category_id', $categoryIds)->orderBy('code', 'desc')->paginate(20);
+      //    $products = Product::whereIn('category_id', $categoryIds)->orderBy('code', 'desc')->paginate(20);
+        if ($categorySlug->parent_id == Null) {
+            $products = ProductCategory::where('parent_id', $categorySlug->id)->where('status',1)->orderBy('position','ASC')->get();
+        }
+        else{            
+            // $categories = ProductCategory::where('parent_id', Null)->where('status',1)->orderBy('position','ASC')->get();
+            $products = Product::whereIn('category_id', $categoryIds)->orderBy('code', 'desc')->paginate(20);
+            $is_product = True;
+        }
+        $names = Product::pluck('name');
+
+        // $products = Product::where('category_id', $categorySlug->id)->get();
+        
+
 
 
         return view('website.category.inner-page', [
@@ -225,6 +233,7 @@ class HomeController extends Controller
             'categories' => $categories,
             'carts' => $carts,
             'names' => $names,
+            'is_product' => $is_product,
         ]);
     }
 

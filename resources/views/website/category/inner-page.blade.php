@@ -4,74 +4,17 @@
     <section class="product-category mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 ">
-                    <div class="sidebar-section">
-                        <div class="sidebar-category">
-                            <h3 class="sidebar-title">Category</h3>
-                            <div class="verticalcat-menu">
-                                <ul>
-                                    @foreach($categories as $category)
-                                        @if(count($category->childs))
-                                            <li class=" menu-item-has-children ">
-                                                <a href="{{route('category.pages',$category->slug)}}">{{$category->code}}</a>
-                                                <ul class="sub-menu">
-                                                    @foreach($category->childs as $firstLevelMenu)
-                                                        @if(count($firstLevelMenu->childs))
-                                                            <li class=" menu-item-has-children ">
-                                                                <a href="{{route('category.pages',$firstLevelMenu->slug)}}">{{$firstLevelMenu->code}}</a>
-                                                                <ul class="sub-menu">
-                                                                    @foreach($firstLevelMenu->childs as $secondLevelMenu)
-                                                                        @if(count($secondLevelMenu->childs))
-                                                                            <li class=" menu-item-has-children ">
-                                                                                <a href="{{route('category.pages',$secondLevelMenu->slug)}}">{{$secondLevelMenu->code}}</a>
-                                                                                <ul class="sub-menu">
-                                                                                    @foreach($secondLevelMenu->childs as $thirdLevelMenu)
-                                                                                        <li>
-                                                                                            <a href="{{route('category.pages',$thirdLevelMenu->slug)}}">{{$thirdLevelMenu->code}} </a>
-                                                                                        </li>
-                                                                                    @endforeach
-                                                                                </ul>
-                                                                            </li>
-                                                                        @else
-                                                                            <li>
-                                                                                <a href="{{route('category.pages',$secondLevelMenu->slug)}}">{{$secondLevelMenu->code}} </a>
-                                                                            </li>
-                                                                        @endif
-                                                                    @endforeach
-                                                                </ul>
-                                                            </li>
-                                                        @else
-                                                            <li>
-                                                                <a href="{{route('category.pages',$firstLevelMenu->slug)}}">{{$firstLevelMenu->code}} </a>
-                                                            </li>
-                                                        @endif
-
-                                                    @endforeach
-                                                </ul>
-                                            </li>
-
-                                        @else
-                                            <li>
-                                                <a href="{{route('category.pages',$category->slug)}}">{{$category->code}}</a>
-                                            </li>
-                                        @endif
-                                    @endforeach
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="sort-wrapper" style="justify-content: space-between">
+                <div class="col-lg-12">
+                    <div class="sort-wrapper">
                         <div class="product-numbers">
-                            <p>{{ $model->name }}</p>
-                        </div>
-
-                        <div class="">
-                            <form>
-                                <input type="button" value="Back" onclick="history.back()" style="    padding: 5px 10px;">
-                            </form>
+                            <p>There Are   
+                                @if (isset($is_product)) 
+                                    {{$products->count()}} Products in <span class="badge bg-info p-3" style="font-size: 12px">{{$model->code}}</span>   
+                                @else 
+                                    {{$products->count()}} Sub-Categories in <span class="badge bg-info p-3" style="font-size: 12px">{{$model->code}}</span> 
+                                @endif 
+                                    Categories .
+                            </p>
                         </div>
                     </div>
 
@@ -79,78 +22,56 @@
                         @if($products)
                             @foreach($products as $product)
                                 <div class="col-lg-3 col-md-6  col-sm-12">
-                                  {{--  <div class="box">
-                                        <div class="product-list-inner">
-                                            <div class="product-listing">
-                                                <!-- Image -->
-                                                <figure>
-                                                    @if($product->thumbnail)
-                                                        <a href="{{route('pages.details',$product->slug)}}" class="img">
-                                                            <img src="{{Image::make('uploads/products/'.$product->thumbnail,'category-product')->toUrl()}}"
-                                                                 alt="Product Image">
-                                                        </a>
-                                                    @endif
-                                                </figure>
-
-                                                <!-- Content -->
-                                                <div class="product-content">
-                                                    <!-- Category & Title -->
-                                                    <div class="product-category-title">
-                                                        <h5 class="product-title"><a
-                                                                    href="{{route('pages.details',$product->slug)}}">{{$product->name}}</a>
-                                                        </h5>
-                                                    </div>
-                                                    <!-- Price & Ratting -->
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>--}}
                                     <div class="single-popular-product">
                                         <div class="sp-thumb">
-                                            <img src="{{ Image::make(public_path('uploads/products/'.$product->thumbnail),'product-thumb')->toUrl() }}"
-                                                 alt=""/>
-                                            @if($product->compare_price)
+                                            {{-- <img src="{{ asset('uploads/category/'.$product->thumbnail)}}" alt=""/> --}}
+                                            @if (isset($is_product))
+                                                <img src="{{ Image::make(public_path('uploads/products/'.$product->thumbnail),'product-thumb')->toUrl() }}" alt=""/>
+                                            @else
+                                                <img src="{{ Image::make(public_path('uploads/category/'.$product->thumbnail),'product-thumb')->toUrl() }}" alt=""/>
+                                            @endif
+                                            @if (isset($is_product))
                                                 <div class="pro-badge">
-                                                    <p class="sale">SALE</p>
+                                                    @if($product->compare_price)
+                                                        <p class="sale">SALE</p>
+                                                    @elseif($product->hot_deal)
+                                                        <p class="hot">HOT</p>
+                                                    @endif
+                                                        <p class="price">${{$product->price}}</p>
                                                 </div>
-                                            @elseif($product->hot_deal)
-                                                <div class="pro-badge">
-                                                    <p class="hot">HOT</p>
-                                                </div>
-                                        @endif
-                                        <!-- -->
+                                            @endif
                                             <div class="product-overlay">
-                                                <div class=""><a href="{{route('pages.details',$product->slug)}}">View</a></div>
-                                               {{-- <div><a href="#">Buy Now</a></div>--}}
+                                                <div class="">
+                                                    @if (isset($is_product))
+                                                        <a href="{{route('pages.details',$product->slug)}}">View</a>
+                                                    @else
+                                                        <a href="{{route('category.pages',$product->slug)}}">View</a>
+                                                    @endif
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="sp-details">
-                                            <h4>{{$product->code}}</h4>
-                                            <div class="product-price">
-                               {{-- <span class="price">
-                                    @if($product->compare_price)
-                                        <del><span><span
-                                                        class="currencySymbol">$</span>{{$product->compare_price}}</span></del>
-                                        <ins><span><span class="currencySymbol">$</span>{{$product->price}}</span></ins>
-                                    @else
-                                        <ins><span><span class="currencySymbol">$</span>{{$product->price}}</span></ins>
-                                    @endif
+                                        @if (isset($is_product))
 
-
-                                </span>--}}
+                                            <div class="sp-product-details mt-2">
+                                                <h4>{{$product->code}}</h4>
+                                                <div class="product-price">
+                                                </div>
                                             </div>
 
-                                        </div>
+                                        @else
+
+                                            <div class="sp-details">
+                                                <h4> Categories: <span>{{$product->code}}</span></h4>
+                                                <div class="product-price">
+                                                </div>
+                                            </div>
+
+                                        @endif
+
                                     </div>
                                 </div>
                             @endforeach
                         @endif
-                    </div>
-                    <div class="row">
-                        <nav aria-label="Page navigation example">
-                            {{$products->links()}}
-                        </nav>
                     </div>
                 </div>
             </div>

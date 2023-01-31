@@ -11,7 +11,7 @@
                         </div>
                     </div>
 
-                    <div class="row  product-margin">
+                    <div class="row  product-margin" style="display: flex; justify-content:center;">
                         @if($categories)
                             @foreach($categories as $product)
                                 <div class="col-lg-3 col-md-6  col-sm-12">
@@ -34,7 +34,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="sp-details">
+                                        <div class="sp-product-details mt-2">
                                             <h4>{{$product->code}}</h4>
                                             <div class="product-price">
                                             </div>

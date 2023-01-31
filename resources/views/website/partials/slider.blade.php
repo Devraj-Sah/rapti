@@ -14,12 +14,23 @@
                                 </div>
                                 <div class="hitStore_slider_content banner_content_left left">
                                     <h3>{{$item->name}}</h3>
-                                    <div class="hitStore_slider_button">
+                                    {{-- <div class="hitStore_slider_button">
                                         <a href="{{route('product.list.home')}}">Shop Now Via Rapti Fashion Fall-2022</a>
                                     </div>
                                     <div class="hitStore_slider_button mt-4">
                                         <a href="{{route('product.list.home')}}">Shop Now Via Rapti Fashion Spring-2022</a>
-                                    </div>
+                                    </div> --}}
+                                    @php 
+                                        $catalogueLatest1 = $frontend_helper->getNavigationListByParent(6);                                    
+                                    @endphp
+                                     @foreach ($catalogueLatest1 as $catalogueLatest)
+                                        @foreach($catalogueLatest->childs as $cata)                                                   
+                                            <div class="hitStore_slider_button mt-4">
+                                                <a href="{{route('category.pages',$frontend_helper->getCatlogSlugById($catalogueLatest->extra_three,'slug'))}}">Shop Now Via Rapti Fashion {{$frontend_helper->getCatlogSlugById($catalogueLatest->extra_three,'code')}}</a>
+                                            </div>
+                                            @break($loop->iteration == 1)
+                                        @endforeach
+                                    @endforeach
                                 </div>
                             </div>
                             @endforeach
