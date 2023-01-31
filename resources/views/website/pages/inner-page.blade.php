@@ -1,6 +1,6 @@
 @extends('website.layouts.app')
 @section('content')
-    <section class="breadcrumb">
+    <section class="breadcrumb" style="background-image: url('{{ asset("website/images/product.jpg") }}'); background-origin: content-box">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">

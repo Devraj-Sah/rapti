@@ -139,7 +139,7 @@ class HomeController extends Controller
 
     public function getCatalogue(FrontendHelper $frontendHelper,$id)
     {
-
+        // return "hlo";
 
         $model = Navigation::where('id', $id)->first();
 

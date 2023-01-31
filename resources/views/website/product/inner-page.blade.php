@@ -37,8 +37,7 @@
                                         <div class="sp-product-details mt-2">
                                             <h4>{{$product->code}}</h4>
                                             <div class="product-price">
-                                            </div>
-
+                                            </div> 
                                         </div>
                                     </div>
                                 </div>
