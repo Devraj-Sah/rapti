@@ -115,7 +115,7 @@
                                     <div id="" >
                                         <button class="rounded-5 evendev open{{$loop->iteration}}" style="border-radius: 30px">Open Catlog</button>
                                         <a href="{{route('category.pages',$frontend_helper->getCatlogSlugById($catalogueLatest->extra_three,'slug'))}}">
-                                            <button class="rounded-5 evendev" style="border-radius: 30px">View Category</button>
+                                            <button class="rounded-5 evendev" style="border-radius: 30px">Place Order</button>
                                         </a>
                                     </div>
                                 </div>

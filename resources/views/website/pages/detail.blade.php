@@ -87,20 +87,26 @@
                         {!! Form::open(['route' =>'cart.add','method'=>'POST','id'=>'FormCart']) !!}
                         {!! Form::hidden('pid',$product->id) !!}
 
-                        <div class="titleName">Product Code: {{ $product->code }}
+                        {{-- <div class="titleName">Product Code: {{ $product->code }}
                         </div>
                         <div class="cost">
                             <div class="newcost">Price: <span>${{ $product->price }} </span>
-                            </div>
+                            </div> --}}
+
                             {{-- <div class="oldcost">Rs:<span>6,166.25 NRP</span>
                              </div>--}}
 
-                        </div>
+                        {{-- </div>
                         <div class="description">
                             <h3>Short Description</h3>
                             <p>{!! $product->short_desc !!}</p>
+                        </div> --}}
+                        
+                        <div class="cost">
+                            <div class="label"><b>Item Code: </b> {{ $product->code }} </div><br>
+                            <div class="label"><b>Color Code: </b> </div><br>
+                            <div class="label"><b>Price: </b><span> ${{ $product->price }} </span>  </div>
                         </div>
-
 
                         <div class="quantity">
                             <div class="label">Quantity:</div>

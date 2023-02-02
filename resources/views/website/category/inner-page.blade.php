@@ -6,15 +6,37 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="sort-wrapper">
-                        <div class="product-numbers">
-                            <p>There Are   
+                        <div class="product-numbers" style="flex: none; width:100%">
+                            {{-- <p>There Are   
                                 @if (isset($is_product)) 
                                     {{$products->count()}} Products in <span class="badge bg-info p-3" style="font-size: 12px">{{$model->code}}</span>   
                                 @else 
                                     {{$products->count()}} Sub-Categories in <span class="badge bg-info p-3" style="font-size: 12px">{{$model->code}}</span> 
                                 @endif 
                                     Categories .
-                            </p>
+                            </p> --}}
+                            
+                                @if (isset($is_product)) 
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <span class="badge bg-info p-3" style="font-size: 12px">{{$model->code}}</span> 
+                                        </div>
+                                        <div class="col-6" style="display:flex; flex-direction:row-reverse">
+                                            <button onclick="window.history.back();" style="padding: 7px 11px 6px 10px;
+                                                                                            background-color: #17a2b8;
+                                                                                            border-radius: 4px;
+                                                                                            color: #2b2b2b;
+                                                                                            border-color: antiquewhite;">
+                                                <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back
+                                            </button>
+                                        </div>
+                                    </div>                                 
+                                    
+                                @else 
+                                    <span class="badge bg-info p-3" style="font-size: 12px">{{$model->code}}</span> 
+                                @endif                                   
+                           
+                           
                         </div>
                     </div>
 
@@ -61,7 +83,7 @@
                                         @else
 
                                             <div class="sp-details">
-                                                <h4> Categories: <span>{{$product->code}}</span></h4>
+                                                <h4><span>{{$product->code}}</span></h4>
                                                 <div class="product-price">
                                                 </div>
                                             </div>
