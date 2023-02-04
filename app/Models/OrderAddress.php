@@ -18,6 +18,7 @@ class OrderAddress extends Model
         'address_line_2',
         'state',
         'city',
+        'company_name',
         
         'zip_code',
         'phone',

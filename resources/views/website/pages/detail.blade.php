@@ -104,7 +104,7 @@
                         
                         <div class="cost">
                             <div class="label"><b>Item Code: </b> {{ $product->code }} </div><br>
-                            <div class="label"><b>Color Code: </b> </div><br>
+                            <div class="label"><b>Color Code: </b> {{ $product->color_code }} </div><br>
                             <div class="label"><b>Price: </b><span> ${{ $product->price }} </span>  </div>
                         </div>
 

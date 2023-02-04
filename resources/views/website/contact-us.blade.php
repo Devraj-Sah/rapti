@@ -67,31 +67,32 @@
                     <div class="contact_form">
                         <div role="form" class="wpcf7">
                             <form action="" method="post" class="wpcf7-form">
+                                {{ csrf_field() }}
                                 <p>
                                     <label> Your Name (required)<br>
                                         <span class="wpcf7-form-control-wrap your-name">
-                                            <input type="text" class="wpcf7-form-control wpcf7-text ">
+                                            <input type="text" name="name" class="wpcf7-form-control wpcf7-text ">
                                         </span>
                                     </label>
                                 </p>
                                 <p>
                                     <label> Your Email (required)<br>
                                         <span class="wpcf7-form-control-wrap your-email">
-                                            <input type="email" name="your-email" class="wpcf7-form-control wpcf7-text">
+                                            <input type="email" name="email" class="wpcf7-form-control wpcf7-text">
                                         </span>
                                     </label>
                                 </p>
                                 <p>
                                     <label> Subject<br>
                                         <span class="wpcf7-form-control-wrap your-subject">
-                                            <input type="text" name="your-subject" value=""  class="wpcf7-form-control wpcf7-text">
+                                            <input type="text" name="subject" value=""  class="wpcf7-form-control wpcf7-text">
                                         </span>
                                     </label>
                                 </p>
                                 <p>
                                     <label> Your Message<br>
                                         <span class="wpcf7-form-control-wrap your-message">
-                                            <textarea name="your-message" class="wpcf7-form-control wpcf7-textarea"
+                                            <textarea name="message" class="wpcf7-form-control wpcf7-textarea"
                                               spellcheck="false"></textarea>
                                         </span>
                                     </label>

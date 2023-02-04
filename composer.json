@@ -8,6 +8,7 @@
         "php": ">=5.6.4",
         "anakadote/laravel-5-image-manager": "dev-master",
         "gloudemans/shoppingcart": "^2.5",
+        "intervention/image": "^2.7",
         "kalnoy/nestedset": "^4.3",
         "kujjs/resize-image": "^0.5.5.1",
         "laracasts/flash": "^3.2",

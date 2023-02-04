@@ -224,7 +224,12 @@ Route::get('website/contact', [
 
 Route::post('website/contact', [
     'as' => 'contact-us.store',
-    'uses' => 'HomeController@storeContactUs'
+    'uses' => 'MailController@storeContactUs'
+]);
+
+Route::get('website/acknowledge', [
+    'as' => 'acknowledge',
+    'uses' => 'MailController@acknowledge'
 ]);
 
 Route::any('category/{alias}', [

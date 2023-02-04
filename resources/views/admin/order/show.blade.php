@@ -35,7 +35,7 @@
                                                 <li>Email:</li>
                                                 <li>Mobile:</li>
                                                 <li>Address:</li>
-                                                <li>District:</li>
+                                                <li>State:</li>
                                                 <li>City:</li>
                                                 <li>Zip Code:</li>
                                                 <li>Status:</li>
@@ -54,13 +54,13 @@
                                                 <li><span class="text-semibold">{{ $order->orderAddress->email }}</span>
                                                 </li>
                                                 <li><span class="text-semibold"
-                                                          style="color:darkblue;font-size:18px;">{{ $order->orderAddress->mobile }}</span>
+                                                          style="color:darkblue;font-size:18px;">{{ $order->orderAddress->phone }}</span>
                                                 </li>
                                                 <li>
-                                                    <span class="text-semibold">{{ $order->orderAddress->address }}</span>
+                                                    <span class="text-semibold">{{ $order->orderAddress->address_line_1 }} / {{ $order->orderAddress->address_line_2 }}</span>
                                                 </li>
                                                 <li>
-                                                    <span class="text-semibold">{{ $order->orderAddress->district }}</span>
+                                                    <span class="text-semibold">{{ $order->orderAddress->state }}</span>
                                                 </li>
                                                 <li><span class="text-semibold">{{ $order->orderAddress->city }}</span>
                                                 </li>
@@ -68,7 +68,7 @@
                                                         <span class="text-semibold">@if($order->orderAddress->zip_code) {{$order->orderAddress->zip_code}} @else
                                                                 ------------------ @endif</span></li>
                                                 <li><span class="text-semibold"
-                                                          style="color:red;font-size:18px;">{{ ucwords($order->orderAddress->order->orderStatus->title) }}</span>
+                                                          style="color:red;font-size:18px;">{{ ucwords($order->orderStatus->title) }}</span>
                                                 </li>
                                             </ul>
                                         </div>

@@ -15,6 +15,8 @@ use App\Notifications\NewOrder;
 use Illuminate\Http\Request;
 use Auth;
 use Cart;
+use App\Mail\orderDetailMailer;
+use Illuminate\Support\Facades\Mail;
 use Laracasts\Flash\Flash;
 
 
@@ -48,8 +50,6 @@ class CheckoutController extends Controller
 
     public function checkoutStore(Request $request, FrontendHelper $frontendHelper)
     {
-
-
         $data['frontend_helper'] = $frontendHelper;
         $data['settings'] = GlobalSetting::where('id', 1)->first();
         $data['categories'] = ProductCategory::where('parent_id', null)->where('status', 1)->orderBy('position', 'ASC')->get();;
@@ -115,9 +115,18 @@ class CheckoutController extends Controller
 
             if ($all['payment_type'] == 'cash_on_delivery') {
                 $order->orderProduct()->saveMany($orderProducts);
-                //Clear Cart
-                $this->clearCart();
 
+                // Send mail to admin
+                $Mailorders = Order::where('customer_id',Auth::user()->id )->orderBy('created_at','devraj')->get();
+                $MailCountorders = count(Order::where('customer_id',Auth::user()->id )->where('is_notify',1)->get());
+                $maildata = compact('Mailorders');
+                $base_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . "/";   
+                $mailall = compact('all','base_url');
+                $base_url = compact('base_url');
+                Mail::to('devraj.sah310@gmail.com')->send(new orderDetailMailer($maildata,$mailall,$base_url));
+                
+                // Clear Cart
+                $this->clearCart();
                 //sending notification to admin
                 $superAdmin = Admin::findOrFail(1);
                 $superAdmin->notify(new NewOrder($order));
@@ -242,7 +251,6 @@ class CheckoutController extends Controller
                 /*'color' => $cart->options->color,
                 'size' => $cart->options->size*/
             ]);
-
         }
 
         return $orderProducts;

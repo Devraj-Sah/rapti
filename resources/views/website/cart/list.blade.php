@@ -53,7 +53,7 @@
                                         </td>
                                         <td class="qty">
                                             <select class="quantity" data-id="{{ $item->rowId }}">
-                                                @foreach([1,2,3,4,5,6,7,8,9,10,11,12,13,14] as $num)
+                                                @foreach(range(1,500) as $num)
                                                     <option value="{{ $num }}"
                                                             @if($item->qty==$num) selected @endif>{{ $num }}</option>
                                                 @endforeach

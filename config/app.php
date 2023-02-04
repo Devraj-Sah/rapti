@@ -180,7 +180,9 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         kujjs\imageManager\imageManagerServiceProvider::class, // optional, you can use Auto-Discovery
         Anakadote\ImageManager\ImageManagerServiceProvider::class,
-        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+
+        Intervention\Image\ImageServiceProvider::class
 
     ],
 
@@ -230,6 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => 'kujjs\imageManager\Facades\ImageManager',
+        'MailImage' => Intervention\Image\Facades\Image::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',

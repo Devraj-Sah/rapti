@@ -176,7 +176,7 @@ class ProductController extends Controller
             }
         }
         $data['slug'] = Str::slug($request->name);
-
+        // return $data['color_code'];
         $product->update($data);
         return redirect(route("products.index"))->with('message', 'Record was successfully Update!!');
     }

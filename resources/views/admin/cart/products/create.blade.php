@@ -61,10 +61,16 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-9" style="padding-top: 10px;">
+                    <div class="col-md-6" style="padding-top: 10px;">
                         <div class="form-group col-md-10">
                             <label>Item Code   </label>
                             {{ Form::text('code',null,['class' => 'form-control required']) }}
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="padding-top: 10px;">
+                        <div class="form-group col-md-10">
+                            <label>Color Code   </label>
+                            {{ Form::text('color_code',null,['class' => 'form-control required']) }}
                         </div>
                     </div>
                 </div>
