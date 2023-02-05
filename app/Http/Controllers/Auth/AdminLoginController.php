@@ -36,7 +36,7 @@ class AdminLoginController extends Controller
 
         }   
 
-        return redirect()->back()->withInput($request->only('name'));                                                                       
+        return redirect()->back()->withInput($request->only('name'))->with('error', 'Username and password doesnot match');                                                                       
     }
 
     public function logout(){

@@ -17,17 +17,29 @@
 <body style="background-color: #a3d7ff;">
 <div class="container">
     <div class="row">
-        @if($message = Session::get('error'))
+        {{-- @if($message = Session::get('error')) --}}
                 {{-- <div class=" container alert alert-danger">
                     {{$message}} <br>
                 </div> --}}
     
-                <div class="container">
+                {{-- <div class="container">
                     <p class="alert alert-danger">{{$message}}</p>
                 </div>
          
-            @endif
-        <div id="login_box" class="col-md-offset-4 col-md-4">
+            @endif --}}
+            <div id="login_box" class="col-md-offset-4 col-md-4">
+                @if($message = Session::get('error'))
+                <div class="container mt-3" style="width: auto">
+                    <p class="alert alert-danger">{{$message}}</p>
+                </div>
+                @endif
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <ul class="alert alert-danger mt-3 ml-3" style="list-style-type: none; padding:5px">
+                           <li> {{ $error }} </li>
+                        </ul>
+                    @endforeach
+                @endif
             <h3>ADMIN LOGIN</h3>
             <form method="post" action="{{url('/admin/login')}}">
                 {{csrf_field()}}
