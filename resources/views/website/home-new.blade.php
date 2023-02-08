@@ -2,8 +2,9 @@
 @section('content')
 
 
-
-    @include('website.partials.slider')
+    {{-- 
+    @include('website.partials.slider') 
+    --}}
 
 
     <!-- overlay catlog  -->
