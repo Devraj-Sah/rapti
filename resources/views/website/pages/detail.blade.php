@@ -142,7 +142,7 @@
 
 
                     <section id="content1">
-                        {!! $product->description !!}
+                        {!! htmlspecialchars_decode($product->description) !!}
                     </section>
                   {{--  <section id="content2">
                         {!! $product->description !!}
