@@ -81,12 +81,13 @@
                                             </div>
 
                                         @else
-
-                                            <div class="sp-details">
-                                                <h4><span>{{$product->code}}</span></h4>
-                                                <div class="product-price">
+                                            <a href="{{route('category.pages',$product->slug)}}">
+                                                <div class="sp-details">
+                                                    <h4><span>{{$product->code}}</span></h4>
+                                                    <div class="product-price">
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </a>
 
                                         @endif
 

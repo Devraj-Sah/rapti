@@ -34,8 +34,8 @@
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group required">
-                                {!! Form::label('name', 'Name',['class'=>'control-label']) !!}
-                                {!! Form::text('name', $value = null, ['id'=>'name','placeholder'=>'Name','class'=>'form-control','required']) !!}
+                                {!! Form::label('name', 'Customer Name',['class'=>'control-label']) !!}
+                                {!! Form::text('name', $value = null, ['id'=>'name','placeholder'=>'Customer Name','class'=>'form-control','required']) !!}
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
@@ -47,15 +47,8 @@
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group">
-                                {!! Form::label('address_line_2', 'Address Line 2 ',['class'=>'control-label']) !!}
+                                {!! Form::label('address_line_2', 'Address Line 2  (Optional)',['class'=>'control-label']) !!}
                                 {!! Form::text('address_line_2', $value = null, ['id'=>'address_line_2','placeholder'=>'Address Line 2','class'=>'form-control']) !!}
-
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group required">
-                                {!! Form::label('country', 'Country',['class'=>'control-label']) !!}
-                                {!! Form::text('country', $value = null, ['id'=>'country','placeholder'=>'Country','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>
@@ -75,11 +68,20 @@
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group required">
-                                {!! Form::label('zip_code', 'Postal Code',['class'=>'control-label']) !!}
+                                {!! Form::label('zip_code', 'Zip Code',['class'=>'control-label']) !!}
                                 {!! Form::text('zip_code', $value = null, ['id'=>'zip_code','placeholder'=>'Zip Code','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>
+                        <div class="col-lg-6 col-md-6  col-sm-12">
+                            <div class="form-group required">
+                                {!! Form::label('country', 'Country',['class'=>'control-label']) !!}
+                                {!! Form::text('country', $value = null, ['id'=>'country','placeholder'=>'Country','class'=>'form-control','required']) !!}
+
+                            </div>
+                        </div>                     
+                       
+                       
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group required">
                                 {!! Form::label('phone', 'Phone Number',['class'=>'control-label']) !!}
@@ -115,8 +117,8 @@
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group required">
-                                {!! Form::label('ship_name', 'Name',['class'=>'control-label']) !!}
-                                {!! Form::text('ship_name', $value = null, ['id'=>'name','placeholder'=>'Name','class'=>'form-control']) !!}
+                                {!! Form::label('ship_name', 'Customer Name',['class'=>'control-label']) !!}
+                                {!! Form::text('ship_name', $value = null, ['id'=>'name','placeholder'=>'Customer Name','class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
@@ -128,18 +130,12 @@
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group">
-                                {!! Form::label('ship_address_line_2', 'Address Line 2 ',['class'=>'control-label']) !!}
+                                {!! Form::label('ship_address_line_2', 'Address Line 2 (Optional)',['class'=>'control-label']) !!}
                                 {!! Form::text('ship_address_line_2', $value = null, ['id'=>'address_line_2','placeholder'=>'Address Line 2','class'=>'form-control']) !!}
 
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6  col-sm-12">
-                            <div class="form-group  required">
-                                {!! Form::label('ship_country', 'Country',['class'=>'control-label']) !!}
-                                {!! Form::text('ship_country', $value = null, ['id'=>'country','placeholder'=>'Country','class'=>'form-control']) !!}
-
-                            </div>
-                        </div>
+                       
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group  required">
                                 {!! Form::label('ship_city', 'City',['class'=>'control-label']) !!}
@@ -156,8 +152,15 @@
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group  required">
-                                {!! Form::label('ship_zip_code', 'Postal Code',['class'=>'control-label']) !!}
+                                {!! Form::label('ship_zip_code', 'Zip Code',['class'=>'control-label']) !!}
                                 {!! Form::text('ship_zip_code', $value = null, ['id'=>'zip_code','placeholder'=>'Zip Code','class'=>'form-control']) !!}
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6  col-sm-12">
+                            <div class="form-group  required">
+                                {!! Form::label('ship_country', 'Country',['class'=>'control-label']) !!}
+                                {!! Form::text('ship_country', $value = null, ['id'=>'country','placeholder'=>'Country','class'=>'form-control']) !!}
 
                             </div>
                         </div>

@@ -104,7 +104,8 @@
                         
                         <div class="cost">
                             <div class="label"><b>Item Code: </b> &nbsp; {{ $product->category->code }} </div><br>
-                            <div class="label"><b>Color Code: </b> &nbsp; {{ preg_match('/\d+/', $product->code, $matches) ? $matches[0] : '' }} </div><br>
+                            <div class="label"><b>Color Code: </b> &nbsp; {{ $product->color_code }} </div><br>
+                            {{-- <div class="label"><b>Color Code: </b> &nbsp; {{ preg_match('/\d+/', $product->code, $matches) ? $matches[0] : '' }} </div><br> --}}
                             <div class="label"><b>Price: </b><span> &nbsp; ${{ $product->price }} </span>  </div>
                         </div>
 

@@ -4,6 +4,10 @@
     if (preg_match('/^http:\/\/(127\.0\.0\.1|localhost)/', $base_url)) {
         $url = 'http://rapti.demo.radiantnepal.info/';
     }
+    else{
+        $url =  $base_url;
+    }
+    
     // echo $base_url;
 @endphp
 @forelse($all as $order)
@@ -26,10 +30,31 @@
 <div style="display: flex;">
     <ul>
         <li style="display: block; padding: 5px;">
-            <span style="color: black; font-weight: bold;"> Billing Name: </span>
-            <span style="color: black; font-weight: bold;"> {{ $customer['name'] }} </span>
+            <span style="color: black; font-weight: bold;"> Order Date </span> <br>
+            <span style="color: black;"> {{ date('d/m/y') }} </span>
         </li>
-        <li style="display: block;padding: 5px;">
+        <li style="display: block; padding: 5px;">
+            <span style="color: black; font-weight: bold;"> Payment method  </span> <br>
+            <span style="color: black;"> Cash On Delivery </span>
+        </li>
+        <li style="display: block; padding: 5px;">
+            <span style="color: black; font-weight: bold;"> Shipping/ Billing address </span> <br>
+            <span style="color: black;"> 
+                Company Name : {{ $customer['company_name'] }} <br>
+                Name    : {{ $customer['name'] }} <br>
+                Address Line 1 :{{ $customer['address_line_1'] }} <br>
+                Address Line 2 :{{ $customer['address_line_2'] }} <br>
+                City    :{{ $customer['city'] }}<br>
+                State    : {{ $customer['state'] }}<br>
+                Zip_code    :{{ $customer['zip_code'] }}<br>
+                Country    :{{ $customer['country'] }}<br>
+                Phone    :{{ $customer['phone'] }}<br>
+                Email    :{{ $customer['email'] }} 
+            </span>
+
+        </li>
+
+        {{-- <li style="display: block;padding: 5px;">
             <span style="color: black; font-weight: bold;"> Billing Email: </span>
             <span style="color: black; font-weight: bold;"> {{ $customer['email'] }} </span>
         </li>
@@ -106,7 +131,7 @@
         <li style="display: block;padding: 5px;">
             <span style="color: black; font-weight: bold;"> Ship Zip Code: </span>
             <span style="color: black; font-weight: bold;"> {{ $customer['ship_zip_code'] }} </span>
-        </li>
+        </li> --}}
     </ul>
 </div>
 <table style="border: 1px solid black; border-collapse:collapse; ">
@@ -137,7 +162,7 @@
             <td rowspan="" style="padding:15px">{{ $product->name }}</td>
             <td style="border: 1px solid black; padding:15px">{{ $product->color_code }}</td>
             <td style="border: 1px solid black; padding:15px">{{ $orderProduct->qty }}</td>
-            <td style="border: 1px solid black; padding:15px">{{ $product->code }}</td>
+            <td style="border: 1px solid black; padding:15px">{{ $product->category->code }}</td>
             <td style="border: 1px solid black; padding:15px">${{ $product->price }}</td>
         </tr>
     @endforeach
