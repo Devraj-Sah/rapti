@@ -28366,7 +28366,7 @@ textarea {
   font-size: 20px;
 }
 .checkout-section .success ul {
-  background: #fff;
+  /* background: #fff; */
   margin: 0;
   padding: 15px;
 }
@@ -29346,3 +29346,44 @@ h1.checkout-heading {
 .sp-product-details h4{
     text-align: center;
 }
+/* ..............................................thank you page start.......................... */
+.checkout-from{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.checkout-section .success {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 47px 50px 40px 50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+
+}
+
+.checkout-section .title {
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+}
+.checkout-section .orderNum {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.checkout-section .success h4 {
+  font-size: 20px;
+  text-align: center;
+}
+.thanksname{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkout-section .shop{
+  text-align: center;
+
+}
+
+/* ..............................................thank you page end.......................... */

@@ -123,7 +123,7 @@ class CheckoutController extends Controller
                 $base_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . "/";   
                 $mailall = compact('all','base_url');
                 $base_url = compact('base_url');
-                Mail::to('devraj.sah310@gmail.com')->send(new orderDetailMailer($maildata,$mailall,$base_url));
+                Mail::to('raptifashion@gmail.com')->send(new orderDetailMailer($maildata,$mailall,$base_url));
                 
                 // Clear Cart
                 $this->clearCart();
@@ -139,7 +139,7 @@ class CheckoutController extends Controller
                 $phone =  $all['phone'];
                 $city =  $all['city'];
 
-                $data = compact('random_token','email','address1','address2','name','phone','city','frontendHelper');
+                $data = compact('random_token','email','address1','address2','name','phone','city','frontendHelper','all');
                 $data['frontend_helper'] = $frontendHelper;
                 $data['settings'] = GlobalSetting::where('id', 1)->first();
                 $data['categories'] = ProductCategory::where('parent_id', null)->where('status', 1)->orderBy('position', 'ASC')->get();;

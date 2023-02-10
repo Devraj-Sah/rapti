@@ -43,7 +43,7 @@ class MailController extends Controller
         // echo "<pre>";
         // print_r($data);
         // die();
-        Mail::to('devraj.sah310@gmail.com')->send(new contactUsMailer($data));
+        Mail::to('raptifashion@gmail.com')->send(new contactUsMailer($data));
         return redirect()->back()->with('sent_mail',"Please Check your Mail !!!");
     }
 

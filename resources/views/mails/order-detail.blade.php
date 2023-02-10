@@ -31,7 +31,7 @@
     <ul>
         <li style="display: block; padding: 5px;">
             <span style="color: black; font-weight: bold;"> Order Date </span> <br>
-            <span style="color: black;"> {{ date('d/m/y') }} </span>
+            <span style="color: black;"> {{ date('d/m/Y') }} </span>
         </li>
         <li style="display: block; padding: 5px;">
             <span style="color: black; font-weight: bold;"> Payment method  </span> <br>
@@ -139,9 +139,9 @@
         <tr style="border: 1px solid black;">
             <th scope="" colspan="" style="border: 1px solid black; padding:15px"></th>
             <th scope="" colspan="2" style="border: 1px solid black; padding:15px">Product Name</th>
+            <th colspan="" style="border: 1px solid black; padding:15px">Item Code</th>
             <th scope="" style="border: 1px solid black; padding:15px">Color Code</th>
             <th colspan="" style="border: 1px solid black; padding:15px">Qty</th>
-            <th colspan="" style="border: 1px solid black; padding:15px">Item Code</th>
             <th colspan="" style="border: 1px solid black; padding:15px">Price</th>
         </tr>
     </thead>
@@ -160,9 +160,9 @@
                     src="{{$url}}uploads/products/{{ $product->thumbnail }}" width="100">
             </td>
             <td rowspan="" style="padding:15px">{{ $product->name }}</td>
+            <td style="border: 1px solid black; padding:15px">{{ $product->category->code }}</td>
             <td style="border: 1px solid black; padding:15px">{{ $product->color_code }}</td>
             <td style="border: 1px solid black; padding:15px">{{ $orderProduct->qty }}</td>
-            <td style="border: 1px solid black; padding:15px">{{ $product->category->code }}</td>
             <td style="border: 1px solid black; padding:15px">${{ $product->price }}</td>
         </tr>
     @endforeach
