@@ -35,7 +35,7 @@
         </li>
         <li style="display: block; padding: 5px;">
             <span style="color: black; font-weight: bold;"> Payment method  </span> <br>
-            <span style="color: black;"> Cash On Delivery </span>
+            <span style="color: black;"> {{ $customer['payment_type'] }} </span>
         </li>
         <li style="display: block; padding: 5px;">
             <span style="color: black; font-weight: bold;"> Shipping/ Billing address </span> <br>
@@ -177,7 +177,7 @@
         <td>{{ $customer['total'] }}</td>
     </tr>
 </table>
-<p> <b> If you accept the Order: </b><br>
+{{-- <p> <b> If you accept the Order: </b><br>
     PLEASE ACKNOWLEDGE RECEIPT OF THIS ORDER BY CLICKING Acknowledge:
 </p>
 <p style="text-align:center">
@@ -191,4 +191,4 @@
                 cursor: pointer;
             ">Acknowledge</button>
     </a>
-</p>
+</p> --}}

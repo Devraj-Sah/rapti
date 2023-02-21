@@ -196,18 +196,30 @@
 
                     <div class="form-group">
                         <div class="form-check">
+                            {!! Form::radio('payment_type', 'Net 30 (est acct)', false,['class'=>'form-check-input']) !!}
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Net 30 (est acct)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            {!! Form::radio('payment_type', 'Use credit card authorized on file', false,['class'=>'form-check-input']) !!}
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Use credit card authorized on file
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            {!! Form::radio('payment_type', 'Call for credit card', false,['class'=>'form-check-input']) !!}
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Call for credit card
+                            </label>
+                        </div>
+                        <div class="form-check">
                             {!! Form::radio('payment_type', 'cash_on_delivery', true,['class'=>'form-check-input']) !!}
 
                             <label class="form-check-label">
                                 Cash On Delivery
                             </label>
-                        </div>
-                        {{--<div class="form-check">
-                            {!! Form::radio('payment_type', 'esewa', false,['class'=>'form-check-input']) !!}
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                E-Sewa
-                            </label>
-                        </div>--}}
+                        </div>                     
                     </div>
 
 
