@@ -52,7 +52,7 @@
                                                 {{-- <img src="{{asset('uploads/products/'.$product->thumbnail)}}" alt=""/> --}}
                                             @else
                                                 {{-- <img src="{{ Image::make(public_path('uploads/category/'.$product->thumbnail),'product-thumb')->toUrl() }}" alt=""/> --}}
-                                                <img src="{{asset('uploads/category/'.$product->thumbnail)}}" alt=""/>
+                                                <img src="{{asset('uploads/category/'.$product->thumbnail)}}" alt="" style="height:270px" />
                                             @endif
                                             @if (isset($is_product))
                                                 <div class="pro-badge">
