@@ -1,5 +1,5 @@
 <div id="conformation">
-    <p><strong>Your <em>Rapti Fashion</em> Order Number <span style="color:#c0392b">{{$data['invoice']}}</span> is Confirmed.</strong></p>
+    <p><strong>Your <em>Rapti Fashion</em> Order Number <span style="color:#c0392b">ATC22{{$data['invoice']}}</span> is Confirmed.</strong></p>
     
     <p><u><span style="font-size:20px"><strong>Order Confirmation</strong></span></u></p>
     

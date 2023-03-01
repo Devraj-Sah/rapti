@@ -54,6 +54,6 @@ class orderDetailMailer extends Mailable
         //     ]);
         // }
 
-        return $this->view('mails.order-detail')->subject('New Order !!!');
+        return $this->view('mails.order-detail')->replyTo('order@raptifashiondirect.com', 'Rapti Fashion')->subject('New Order !!!');
     }
 }

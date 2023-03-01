@@ -18,6 +18,7 @@ use Cart;
 use App\Mail\orderDetailMailer;
 use Illuminate\Support\Facades\Mail;
 use Laracasts\Flash\Flash;
+use App\Mail\customerOrderConfirmationMailer;
 
 
 class CheckoutController extends Controller
@@ -113,7 +114,7 @@ class CheckoutController extends Controller
 
             $orderProducts = $this->getCartProducts();
 
-            if ($all['payment_type'] == 'cash_on_delivery') {
+            // if ($all['payment_type'] == 'cash_on_delivery') {
                 $order->orderProduct()->saveMany($orderProducts);
 
                 // Send mail to admin
@@ -123,7 +124,19 @@ class CheckoutController extends Controller
                 $base_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . "/";   
                 $mailall = compact('all','base_url');
                 $base_url = compact('base_url');
-                Mail::to('raptifashion@gmail.com')->send(new orderDetailMailer($maildata,$mailall,$base_url));
+                $recipients = [
+                    'raptifashion@gmail.com',
+                    'ektavyas.edu@gmail.com',
+                    'raptitradechannels@gmail.com',
+                    'order@raptifashiondirect.com',
+                    'devraj.sah310@gmail.com'
+                 ];
+                Mail::to($recipients)->send(new orderDetailMailer($maildata,$mailall,$base_url));
+
+                $invoice = $all['invoice_id'];
+                $email = $all['email'];
+                $data1 = compact('invoice');
+                Mail::to($email)->send(new customerOrderConfirmationMailer($data1));
                 
                 // Clear Cart
                 $this->clearCart();
@@ -150,9 +163,9 @@ class CheckoutController extends Controller
                 $data['total'] = Cart::total();
                 $data['tax'] = Cart::tax();
                 return view('website.checkout.thankYou')->with($data);
-            }else{
+            // }else{
 
-            }
+            // }
 
         } catch (\Throwable $t) {
             return redirect()->back()->with('error',$t->getMessage() );

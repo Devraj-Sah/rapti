@@ -49,8 +49,10 @@
                                             {{-- <img src="{{ asset('uploads/category/'.$product->thumbnail)}}" alt=""/> --}}
                                             @if (isset($is_product))
                                                 <img src="{{ Image::make(public_path('uploads/products/'.$product->thumbnail),'product-thumb')->toUrl() }}" alt=""/>
+                                                {{-- <img src="{{asset('uploads/products/'.$product->thumbnail)}}" alt=""/> --}}
                                             @else
-                                                <img src="{{ Image::make(public_path('uploads/category/'.$product->thumbnail),'product-thumb')->toUrl() }}" alt=""/>
+                                                {{-- <img src="{{ Image::make(public_path('uploads/category/'.$product->thumbnail),'product-thumb')->toUrl() }}" alt=""/> --}}
+                                                <img src="{{asset('uploads/category/'.$product->thumbnail)}}" alt=""/>
                                             @endif
                                             @if (isset($is_product))
                                                 <div class="pro-badge">
