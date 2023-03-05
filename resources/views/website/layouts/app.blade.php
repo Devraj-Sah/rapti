@@ -86,7 +86,7 @@
 
         @if (Session::get('token') == Null)
             @if (count($errors) > 0)
-                <div class="container alert alert-danger">
+                <div class="container alert alert-danger" style="margin-top:10px; margin-bottom:-20px; padding:5px 5px 5px 25px;">
                     @foreach ($errors->all() as $error)
                     {{ $error }}  <br>           
                     @endforeach         

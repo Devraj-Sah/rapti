@@ -125,18 +125,19 @@ class CheckoutController extends Controller
                 $mailall = compact('all','base_url');
                 $base_url = compact('base_url');
                 $recipients = [
-                    'raptifashion@gmail.com',
-                    'ektavyas.edu@gmail.com',
-                    'raptitradechannels@gmail.com',
+                    // '',
+                    // '',
+                    // 'raptitradechannels@gmail.com',
                     'order@raptifashiondirect.com',
-                    'devraj.sah310@gmail.com'
                  ];
-                Mail::to($recipients)->send(new orderDetailMailer($maildata,$mailall,$base_url));
+                Mail::to($recipients)
+                    ->bcc(['ektavyas.edu@gmail.com','raptifashion@gmail.com','devraj.sah13@gmail.com'])
+                    ->send(new orderDetailMailer($maildata,$mailall,$base_url));
 
-                $invoice = $all['invoice_id'];
+                // $invoice = $all['invoice_id'];
                 $email = $all['email'];
-                $data1 = compact('invoice');
-                Mail::to($email)->send(new customerOrderConfirmationMailer($data1));
+                // $data1 = compact('invoice');
+                Mail::to($email)->send(new customerOrderConfirmationMailer($maildata,$mailall,$base_url));
                 
                 // Clear Cart
                 $this->clearCart();

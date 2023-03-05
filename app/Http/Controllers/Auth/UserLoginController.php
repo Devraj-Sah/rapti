@@ -36,9 +36,14 @@ class UserLoginController extends Controller
 
 
         if(Auth::guard('web')->attempt(['email'=>$request->email, 'password'=>$request->password])){
-
-            return redirect()->route('website.home');
-
+            // return Auth::user()->verify ;
+            if(Auth::user()->verify == 1){
+                return redirect()->route('website.home');
+            }
+            else{
+                Auth::guard('web')->logout();
+                return redirect()->back()->with('success'," The email and password are correct, but unfortunately, I must inform you that you are not authorized to proceed.");
+            }
         }
 
         return redirect()->back()->with('error', 'email and password doesnot match');

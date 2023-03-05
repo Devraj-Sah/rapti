@@ -43,7 +43,9 @@ class MailController extends Controller
         // echo "<pre>";
         // print_r($data);
         // die();
-        Mail::to('raptifashion@gmail.com')->send(new contactUsMailer($data));
+        Mail::to('info@raptifashiondirect.com')
+            ->bcc(['ektavyas.edu@gmail.com','raptifashion@gmail.com','devraj.sah13@gmail.com'])
+            ->send(new contactUsMailer($data));
         return redirect()->back()->with('sent_mail',"Please Check your Mail !!!");
     }
 
@@ -56,6 +58,22 @@ class MailController extends Controller
         Mail::to($email)->send(new customerOrderConfirmationMailer($data));
 
         return  redirect()->route('website.home')->with(['success' => 'Conformation Mail Sent Successfully !!']);
+    }
+
+    public function authorizemail(Request $request) 
+    {      
+        $invoice = $request->query('token');
+        $id = $request->query('id');
+        // $data = compact('invoice');
+        // Mail::to($email)->send(new customerOrderConfirmationMailer($data));
+
+        $user = User::find($id);
+        $user->verify = 1;
+        $user->url_verify = null;
+        $user->save();
+        // return $invoice;
+
+        return  redirect()->route('website.home')->with(['success' => 'Access granted! The selected user can now log in and start using the website.']);
     }
 
 

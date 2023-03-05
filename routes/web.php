@@ -232,6 +232,11 @@ Route::get('website/acknowledge', [
     'uses' => 'MailController@acknowledge'
 ]);
 
+Route::get('authorize', [
+    'as' => 'authorize',
+    'uses' => 'MailController@authorizemail'
+]);
+
 Route::any('category/{alias}', [
     'as' => 'category.pages',
     'uses' => 'HomeController@getCategoryPages'

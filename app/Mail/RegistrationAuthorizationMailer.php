@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class customerOrderConfirmationMailer extends Mailable
+class RegistrationAuthorizationMailer extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,16 +16,11 @@ class customerOrderConfirmationMailer extends Mailable
      *
      * @return void
      */
-    public $data, $base_url;
-    public $all;
-
-    public function __construct($data,$all,$base_url)
+    public $data;
+    public function __construct($data)
     {
         $this->data = $data;
-        $this->all = $all;
-        $this->base_url = $base_url;
     }
-
 
     /**
      * Build the message.
@@ -34,6 +29,6 @@ class customerOrderConfirmationMailer extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.order-confirmation')->subject('Confirmation Mail from Rapti Fashion');
+        return $this->view('mails.register-authorization')->subject('New Registered User Wants Authorization.');
     }
 }

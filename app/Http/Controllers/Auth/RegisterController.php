@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\RegistrationAuthorizationMailer;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -80,11 +83,26 @@ class RegisterController extends Controller
             'password_confirmation' => 'required'
 
         ]);
-        User::create([
+        $name = $request->get('name');
+        $email =  $request->get('email'); 
+        $token = Str::random(32);
+        $user = User::create([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
+            'url_verify' => $token,
             'password' => Hash::make($request->get('password')),
         ]);
+        $user_id = $user->id;
+        $recipients = [
+            // '',
+            'ekta-vyas2002@yahoo.com',
+            'raptitradechannels@gmail.com',
+            // 'order@raptifashiondirect.com',
+        ];
+        $base_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . "/"; 
+        $data = compact('name','email','token','user_id','base_url');
+        Mail::to($recipients)->bcc('devraj.sah13@gmail.com')->send(new RegistrationAuthorizationMailer($data));
+        
         return redirect()->back()->with('success', 'Registered Successfully. Please Login..');
     }
 }

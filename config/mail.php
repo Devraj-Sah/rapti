@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'info@raptifashiondirect.com'),
-        'name' => env('MAIL_FROM_NAME', 'Rapti Fashion'),
+        'address' => env('MAIL_FROM_ADDRESS', 'admin@raptifashiondirect.com'),
+        'name' => env('MAIL_FROM_NAME', 'No-reply@RaptiFashion'),
     ],
 
     /*
