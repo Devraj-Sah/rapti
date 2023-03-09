@@ -13,7 +13,7 @@ class AdminLoginController extends Controller
 
     use AuthenticatesUsers;
 
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     public function __construct()
     {
@@ -21,6 +21,7 @@ class AdminLoginController extends Controller
     }
 
     public function index(){
+        // return "hlo";
         return view('auth.login');
     }
     

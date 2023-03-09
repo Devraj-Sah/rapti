@@ -41,7 +41,7 @@ class CategoryController extends Controller
         // return $data;
 
         $this->validate($request, [
-            'name'=>'required',
+            'name'=>'required|unique:product_categories,name',
             'thumbnail.*' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -81,7 +81,7 @@ class CategoryController extends Controller
 
 
         $this->validate($request, [
-            'name'=>'required',
+            'name'=>'required|unique:product_categories,name',
             'thumbnail.*' => 'mimes:jpeg,png,jpg,gif,svg|max:10048',
         ]);
 

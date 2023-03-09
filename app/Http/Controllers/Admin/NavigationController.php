@@ -57,7 +57,7 @@ class NavigationController extends Controller
     public function store(Request $request, $nav_category)
     {
         $this->validate($request,[
-            'nav_name' => 'required|min:2',
+            'nav_name' => 'required|min:2|unique:navigations,nav_name',
             'caption' => 'required',
             'icon_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
             'banner_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024'
@@ -182,7 +182,7 @@ class NavigationController extends Controller
     public function update(Request $request, $nav_category, $id)
     {
         $this->validate($request,[
-            'nav_name' => 'required|min:3',
+            'nav_name' => 'required|min:3|unique:navigations,nav_name',
             'caption' => 'required',
             'icon_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
             'banner_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024'
