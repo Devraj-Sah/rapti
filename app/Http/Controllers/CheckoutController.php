@@ -44,6 +44,8 @@ class CheckoutController extends Controller
         $data['subTotal'] = Cart::subtotal();
         $data['total'] = Cart::total();
         $data['tax'] = Cart::tax();
+        $data['user_data'] = Auth::user();
+        
 
         return view('website.checkout.checkout', $data);
     }

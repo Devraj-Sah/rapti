@@ -417,7 +417,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="signupModalLabel">Please Login</h5>
+                <h5 class="modal-title" id="signupModalLabel">Register</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -426,25 +426,70 @@
 
                     <form method="POST" action="{{route('users.register')}}" id="registerForm">
                         {{ csrf_field() }}
-                        <div class="col-md-12 col-sm-12">
-                            <label for="email">Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Full Name" value="{{old('name')}}" required >
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <label for="email">Company Name</label>
+                                <input type="text" name="company" class="form-control" placeholder="Company Name" value="{{old('company')}}" required >
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <label for="email">Name</label>
+                                <input type="text" name="name" class="form-control" placeholder="Full Name" value="{{old('name')}}" required >
+                            </div>
                         </div>
-
-                        <div class="col-md-12 col-sm-12">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" class="form-control" placeholder="Email" value="{{old('email')}}" required >
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <label for="email">Address1</label>
+                                <input type="text" name="address" class="form-control" placeholder="Address1" value="{{old('address')}}" required >
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <label for="email">Address2</label>
+                                <input type="text" name="address_2" class="form-control" placeholder="Address2" value="{{old('address_2')}}" required >
+                            </div>
                         </div>
-                        <div class="col-md-12 col-sm-12">
-                            <label for="email">Password</label>
-                            <input type="password" name="password" class="form-control" 
-                                   placeholder="Password" required >
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <label for="email">City</label>
+                                <input type="text" name="city" class="form-control" placeholder="City" value="{{old('city')}}" required >
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <label for="email">State</label>
+                                <input type="text" name="state" class="form-control" placeholder="State" value="{{old('state')}}" required >
+                            </div>
                         </div>
-                        <div class="col-md-12 col-sm-12">
-                            <label for="email">Conform Password</label>
-                            <input type="password" name="password_confirmation" class="form-control"
-                                   placeholder="Confirm Password" required >
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <label for="email">Zip_Code</label>
+                                <input type="text" name="zip" class="form-control" placeholder="City" value="{{old('zip')}}" required >
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <label for="email">Country</label>
+                                <input type="text" name="country" class="form-control" placeholder="Country" value="{{old('country')}}" required >
+                            </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <label for="email">Phone</label>
+                                <input type="text" name="phone" class="form-control" placeholder="Phone Number" value="{{old('phone')}}" required >
+                            </div>
+                            
+                            <div class="col-md-6 col-sm-12">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" class="form-control" placeholder="Email" value="{{old('email')}}" required >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <label for="email">Password</label>
+                                <input type="password" name="password" class="form-control" 
+                                    placeholder="Password" required >
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <label for="email">Conform Password</label>
+                                <input type="password" name="password_confirmation" class="form-control"
+                                    placeholder="Confirm Password" required >
+                            </div>
+                        </div>
+                        <br>
                         <div class="col-md-12 col-sm-12">
                             <button type="submit" class="button-primary">Submit</button>
                         </div>

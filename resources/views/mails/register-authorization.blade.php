@@ -17,13 +17,29 @@
         <thead>
             <tr style="border: 1px solid black;">
                 <th scope="" colspan="2" style="border: 1px solid black; padding:15px">User Name</th>
+                <th colspan="" style="border: 1px solid black; padding:15px">Company</th>
                 <th colspan="" style="border: 1px solid black; padding:15px">Email</th>
+                <th colspan="" style="border: 1px solid black; padding:15px">Address1</th>
+                <th colspan="" style="border: 1px solid black; padding:15px">Address2</th>
+                <th colspan="" style="border: 1px solid black; padding:15px">City</th>
+                <th colspan="" style="border: 1px solid black; padding:15px">State</th>
+                <th colspan="" style="border: 1px solid black; padding:15px">Zip</th>
+                <th colspan="" style="border: 1px solid black; padding:15px">Country</th>
+                <th colspan="" style="border: 1px solid black; padding:15px">Phone</th>
             </tr>
         </thead>
             <tr style="border: 1px solid black;">
 
-                <td rowspan="" style="padding:15px">{{ $data['name'] }}</td>
+                <td rowspan="" colspan="2" style="padding:15px">{{ $data['name'] }}</td>
+                <td style="border: 1px solid black; padding:15px">{{ $data['company'] }}</td>
                 <td style="border: 1px solid black; padding:15px">{{ $data['email'] }}</td>
+                <td style="border: 1px solid black; padding:15px">{{ $data['address'] }}</td>
+                <td style="border: 1px solid black; padding:15px">{{ $data['address_2'] }}</td>
+                <td style="border: 1px solid black; padding:15px">{{ $data['city'] }}</td>
+                <td style="border: 1px solid black; padding:15px">{{ $data['state'] }}</td>
+                <td style="border: 1px solid black; padding:15px">{{ $data['zip'] }}</td>
+                <td style="border: 1px solid black; padding:15px">{{ $data['country'] }}</td>
+                <td style="border: 1px solid black; padding:15px">{{ $data['phone'] }}</td>
 
             </tr>
     </table>

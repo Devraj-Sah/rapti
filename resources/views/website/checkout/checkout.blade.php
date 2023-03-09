@@ -29,54 +29,54 @@
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group required">
                                 {!! Form::label('company_name', 'Company Name',['class'=>'control-label']) !!}
-                                {!! Form::text('company_name', $value = null, ['id'=>'text','placeholder'=>'Company Name','class'=>'form-control','required']) !!}
+                                {!! Form::text('company_name', $value = $user_data->company, ['id'=>'text','placeholder'=>'Company Name','class'=>'form-control','required']) !!}
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group required">
                                 {!! Form::label('name', 'Customer Name',['class'=>'control-label']) !!}
-                                {!! Form::text('name', $value = null, ['id'=>'name','placeholder'=>'Customer Name','class'=>'form-control','required']) !!}
+                                {!! Form::text('name', $value = $user_data->name, ['id'=>'name','placeholder'=>'Customer Name','class'=>'form-control','required']) !!}
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group required">
                                 {!! Form::label('address_line_1', 'Address Line 1',['class'=>'control-label']) !!}
-                                {!! Form::text('address_line_1', $value = null, ['id'=>'address_line_1','placeholder'=>'Address Line 1','class'=>'form-control','required']) !!}
+                                {!! Form::text('address_line_1', $value = $user_data->address, ['id'=>'address_line_1','placeholder'=>'Address Line 1','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group">
                                 {!! Form::label('address_line_2', 'Address Line 2  (Optional)',['class'=>'control-label']) !!}
-                                {!! Form::text('address_line_2', $value = null, ['id'=>'address_line_2','placeholder'=>'Address Line 2','class'=>'form-control']) !!}
+                                {!! Form::text('address_line_2', $value = $user_data->address_2, ['id'=>'address_line_2','placeholder'=>'Address Line 2','class'=>'form-control']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group required">
                                 {!! Form::label('city', 'City',['class'=>'control-label']) !!}
-                                {!! Form::text('city', $value = null, ['id'=>'city','placeholder'=>'City','class'=>'form-control','required']) !!}
+                                {!! Form::text('city', $value = $user_data->name, ['id'=>'city','placeholder'=>'City','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group required">
                                 {!! Form::label('state', 'State',['class'=>'control-label']) !!}
-                                {!! Form::text('state', $value = null, ['id'=>'state','placeholder'=>'State','class'=>'form-control','required']) !!}
+                                {!! Form::text('state', $value = $user_data->city, ['id'=>'state','placeholder'=>'State','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group required">
                                 {!! Form::label('zip_code', 'Zip Code',['class'=>'control-label']) !!}
-                                {!! Form::text('zip_code', $value = null, ['id'=>'zip_code','placeholder'=>'Zip Code','class'=>'form-control','required']) !!}
+                                {!! Form::text('zip_code', $value = $user_data->zip, ['id'=>'zip_code','placeholder'=>'Zip Code','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group required">
                                 {!! Form::label('country', 'Country',['class'=>'control-label']) !!}
-                                {!! Form::text('country', $value = null, ['id'=>'country','placeholder'=>'Country','class'=>'form-control','required']) !!}
+                                {!! Form::text('country', $value = $user_data->country, ['id'=>'country','placeholder'=>'Country','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>                     
@@ -85,14 +85,14 @@
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group required">
                                 {!! Form::label('phone', 'Phone Number',['class'=>'control-label']) !!}
-                                {!! Form::text('phone', $value = null, ['id'=>'phone','placeholder'=>'Phone Number','class'=>'form-control','required']) !!}
+                                {!! Form::text('phone', $value = $user_data->phone, ['id'=>'phone','placeholder'=>'Phone Number','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6  col-sm-12">
                             <div class="form-group required">
                                 {!! Form::label('email', 'Email',['class'=>'control-label']) !!}
-                                {!! Form::email('email', $value = null, ['id'=>'email','placeholder'=>'Email','class'=>'form-control','required']) !!}
+                                {!! Form::email('email', $value = $user_data->email, ['id'=>'email','placeholder'=>'Email','class'=>'form-control','required']) !!}
 
                             </div>
                         </div>

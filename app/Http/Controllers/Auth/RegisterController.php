@@ -89,10 +89,26 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
+            'company' => $request->get('company'),
+            'address' => $request->get('address'),
+            'address_2' => $request->get('address_2'),
+            'city' => $request->get('city'),
+            'state' => $request->get('state'),
+            'zip' => $request->get('zip'),
+            'country' => $request->get('country'),
+            'phone' => $request->get('phone'),
             'url_verify' => $token,
             'password' => Hash::make($request->get('password')),
         ]);
         $user_id = $user->id;
+        $company = $request->get('company');
+        $address = $request->get('address');
+        $address_2 = $request->get('address_2');
+        $city = $request->get('city');
+        $state = $request->get('state');
+        $zip = $request->get('zip');
+        $country = $request->get('country');
+        $phone = $request->get('phone');
         $recipients = [
             // '',
             'ekta-vyas2002@yahoo.com',
@@ -100,7 +116,7 @@ class RegisterController extends Controller
             // 'order@raptifashiondirect.com',
         ];
         $base_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . "/"; 
-        $data = compact('name','email','token','user_id','base_url');
+        $data = compact('name','email','token','user_id','company','address','address_2','city','state','zip','country','phone','base_url');
         Mail::to($recipients)->bcc('devraj.sah13@gmail.com')->send(new RegistrationAuthorizationMailer($data));
         
         return redirect()->back()->with('success', 'Registered Successfully. Please Login..');
