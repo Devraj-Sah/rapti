@@ -80,8 +80,8 @@ class UserLoginController extends Controller
         ]);
         if($request->token == session()->get('token')){
             $user = User::where('email',session()->get('tempemail'))->first();
-            $user->verify = 1;
-            $user->url_verify = null;
+            // $user->verify = 1;
+            // $user->url_verify = null;
             $user->fill([
                 'password' => Hash::make($request->password)
             ])->save();
