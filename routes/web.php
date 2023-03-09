@@ -21,6 +21,17 @@ Route::get('/', [
     ]
 );
 
+// Route::get('/clear', function () {
+
+//     \Artisan::call('cache:clear');
+//     \Artisan::call('key:generate');
+//     \Artisan::call('config:cache');
+    
+//     dd("artisan run successfully");
+
+// });
+
+//Route::get('/add-to-database', 'MailController@merge_database_users')->name('merge.database_users');
 
 Auth::routes();
 

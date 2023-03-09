@@ -21,6 +21,7 @@ use Cart;
 use Illuminate\Support\Facades\Session;
 use App\User;
 use App\Admin;
+use App\rpt_wholeseller;
 use Illuminate\Support\Facades\Hash;
 
 class MailController extends Controller
@@ -75,6 +76,61 @@ class MailController extends Controller
 
         return  redirect()->route('website.home')->with(['success' => 'Access granted! The selected user can now log in and start using the website.']);
     }
+
+    public function merge_database_users(Request $request) 
+    {
+        $sellers = rpt_wholeseller::all();
+        foreach ($sellers as $key => $value) {
+
+            $users = User::where('email',$value['email'])->first();
+            if(isset($users)){
+                if($value['eveningTel'] != ""){
+                    echo("-------");
+                    if($value['telephone'] != $value['eveningTel']){
+                        echo("------------------------------------------");
+                   
+
+                            $users->phone = $value['telephone'].",".$value['eveningTel'];
+                        }
+                    }
+                    
+                else{
+                    $users->phone = $value['telephone'];
+                }
+                $users->save();
+            
+                // $user = User::create([
+                //     'name' => $value['firstname'] ." ". $value['lastname'], #1
+                //     'email' => $value['email'], #2
+                //     'password' => Hash::make("password@123"), #3
+
+                //     'address' => $value['address1'],  #4
+                //     'phone' => $value['email'], #5
+                //     'company' => $value['company'], #7
+                //     'resellerId' => $value['resellerId'],#8
+                //     'address_2' => $value['address2'], #9
+                //     'city' => $value['city'], #10
+                //     'country' => $value['country'], #11
+                //     'state' => $value['state'], #12
+                //     'zip' => $value['zip'], #13
+                //     'state' => $value['state'], #14
+                //     'fax' => $value['fax'],
+                //     'verify' => 1,
+                //     'remember_token' => 'old_user',
+                    
+                // ]);
+                echo("done");
+                echo("<br>");
+            }
+            else{
+                echo("already done");
+                echo("<br>");
+            }
+            
+        }
+        // return $sellers;
+    }
+
 
 
 }

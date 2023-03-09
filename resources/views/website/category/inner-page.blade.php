@@ -100,6 +100,9 @@
                     </div>
                 </div>
             </div>
+            <div class="pagination-dev" style="display:flex; justify-content:center;">        
+                {{$products->links('pagination::bootstrap-4')}}
+            </div>
         </div>
     </section>
 @endsection

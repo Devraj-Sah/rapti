@@ -210,11 +210,11 @@ class HomeController extends Controller
 
       //    $products = Product::whereIn('category_id', $categoryIds)->orderBy('code', 'desc')->paginate(20);
         if ($categorySlug->parent_id == Null) {
-            $products = ProductCategory::where('parent_id', $categorySlug->id)->where('status',1)->orderBy('position','ASC')->get();
+            $products = ProductCategory::where('parent_id', $categorySlug->id)->where('status',1)->latest()->paginate(20);
         }
         else{            
             // $categories = ProductCategory::where('parent_id', Null)->where('status',1)->orderBy('position','ASC')->get();
-            $products = Product::whereIn('category_id', $categoryIds)->orderBy('code', 'desc')->paginate(20);
+            $products = Product::whereIn('category_id', $categoryIds)->latest()->paginate(20);
             $is_product = True;
         }
         $names = Product::pluck('name');
