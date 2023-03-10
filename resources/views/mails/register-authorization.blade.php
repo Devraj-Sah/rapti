@@ -6,6 +6,12 @@
     else{
         $url =  $base_url;
     }
+    if(isset($data['mailto1'])){
+        $mailto = $data['mailto1'];
+    }
+    else{
+        $mailto = $data['mailto2'];
+    }
 @endphp
 <div id="conformation">
     <p><strong>One New member Registered in <em>Rapti Fashion</em> </strong></p>  
@@ -48,7 +54,7 @@
       
     </p>
     <p style="text-align:center">
-        <a href="{{$url}}authorize?token={{$data['token']}}&id={{$data['user_id']}}">
+        <a href="{{$url}}authorize?token={{$data['token']}}&id={{$data['user_id']}}&email={{$mailto}}">
             <button type="button" class="btn btn-primary" style="
                     background-color: #007bff;
                     color: white;

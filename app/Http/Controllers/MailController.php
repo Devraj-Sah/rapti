@@ -7,6 +7,7 @@ use App\Helpers\FrontendHelper;
 use App\Helpers\ProductHelper;
 use App\Mail\InquiryMailer;
 use App\Mail\customerOrderConfirmationMailer;
+use App\Mail\ApprovedConformationMailer;
 use App\Mail\orderDetailMailer;
 use App\Mail\contactUsMailer;
 use App\Models\Catalogue;
@@ -63,15 +64,27 @@ class MailController extends Controller
 
     public function authorizemail(Request $request) 
     {      
+        // return "ok";
         $invoice = $request->query('token');
         $id = $request->query('id');
-        // $data = compact('invoice');
-        // Mail::to($email)->send(new customerOrderConfirmationMailer($data));
-
+        $email = $request->query('email');
+        
         $user = User::find($id);
-        $user->verify = 1;
-        $user->url_verify = null;
-        $user->save();
+        if ($invoice == $user->url_verify) {
+            # code...
+            $user->verify = 1;
+            $user->url_verify = null;
+            $user->save();
+        }
+        else{
+            return  redirect()->route('website.home')->with(['success' => 'Perhaps this user has already been granted access by one of the authorized members.']);
+        }
+        $Cname = $user->name;
+        $Cemail = $user->email;
+
+        $data = compact('Cname','Cemail');
+        Mail::to($email)->send(new ApprovedConformationMailer($data));
+
         // return $invoice;
 
         return  redirect()->route('website.home')->with(['success' => 'Access granted! The selected user can now log in and start using the website.']);

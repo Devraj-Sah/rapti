@@ -57,6 +57,7 @@ class UserLoginController extends Controller
         if(!isset($request->again))
         {
             $token = rand(100000,999999);
+            $forgetdatabase = ForgotPasswordController::
             session()->put('token',$token);
             session()->put('tempemail',$request->email);
         }

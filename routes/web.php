@@ -1,6 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\User;
+use Illuminate\Support\Str;
 
 if(version_compare(PHP_VERSION, '7.2.0', '>=')) {
     error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
@@ -21,15 +23,20 @@ Route::get('/', [
     ]
 );
 
-// Route::get('/clear', function () {
+Route::get('/clear', function () {
 
-//     \Artisan::call('cache:clear');
-//     \Artisan::call('key:generate');
-//     \Artisan::call('config:cache');
+    // \Artisan::call('cache:clear');
+    // \Artisan::call('key:generate');
+    // \Artisan::call('config:cache');
+    // $token = Str::random(32);
+
+    // $user1 = User::where('email','devraj.sah13@gmail.com')->first();
+    // $token1 = $user1->createToken($token)->plainTextToken;
+    // return $token1;
     
-//     dd("artisan run successfully");
+    // dd("artisan run successfully");
 
-// });
+});
 
 //Route::get('/add-to-database', 'MailController@merge_database_users')->name('merge.database_users');
 
@@ -178,16 +185,16 @@ Route::group(['prefix' => config('frw.uri'),'middleware' =>  ['auth:admin'], 'gr
         'uses' => 'Admin\ProductController@deleteFeaturedImage'
     ]);
 
-    Route::resource('catalogues', 'Admin\CatalogueController');
-    Route::get('catalogueImage/{id}/delete', [
-        'as' => 'catalogueImage.delete',
-        'uses' => 'Admin\CatalogueController@deleteCatalogueImage'
-    ]);
+    // Route::resource('catalogues', 'Admin\CatalogueController');
+    // Route::get('catalogueImage/{id}/delete', [
+    //     'as' => 'catalogueImage.delete',
+    //     'uses' => 'Admin\CatalogueController@deleteCatalogueImage'
+    // ]);
 
-    Route::get('catalogueFile/{id}/delete', [
-        'as' => 'catalogueFile.delete',
-        'uses' => 'Admin\CatalogueController@deleteCatalogueFile'
-    ]);
+    // Route::get('catalogueFile/{id}/delete', [
+    //     'as' => 'catalogueFile.delete',
+    //     'uses' => 'Admin\CatalogueController@deleteCatalogueFile'
+    // ]);
     //.............................Users Detail.............................
     Route::get('users-list', [
         'as' => 'users-list.index',
@@ -227,6 +234,10 @@ Route::group(['prefix' => 'cart'], function () {
     Route::get('/checkout/payment/success/{orderId}', ['as' => 'cart.checkout.payment.success', 'uses' => 'CheckoutController@success']);
 });
 
+Route::get('authorize', [
+    'as' => 'authorize',
+    'uses' => 'MailController@authorizemail'
+]);
 
 Route::get('website/contact', [
     'as' => 'website.contact-us',
@@ -243,10 +254,6 @@ Route::get('website/acknowledge', [
     'uses' => 'MailController@acknowledge'
 ]);
 
-Route::get('authorize', [
-    'as' => 'authorize',
-    'uses' => 'MailController@authorizemail'
-]);
 
 Route::any('category/{alias}', [
     'as' => 'category.pages',
@@ -313,6 +320,9 @@ Route::get('/catalogue/list/{id}', [
 
 
 
+    
+
+
 
 Route::group(['middleware' => ['web'], 'prefix' => 'user'], function() {
 
@@ -332,4 +342,5 @@ Route::group(['middleware' => ['web'], 'prefix' => 'user'], function() {
     Route::get('myOrders', 'UserController@myOrders')->name('user.myOrders');
     Route::get('{orderId}/myOrders/', 'UserController@orderDetail')->name('user.orderDetail');
     Route::get('{orderId}/cancleOrder/', 'UserController@cancleOrder')->name('user.cancleOrder');
+   
 });
