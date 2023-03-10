@@ -133,7 +133,7 @@ class CheckoutController extends Controller
                     'order@raptifashiondirect.com',
                  ];
                 Mail::to($recipients)
-                    ->bcc(['ektavyas.edu@gmail.com','raptifashion@gmail.com','devraj.sah13@gmail.com'])
+                    ->bcc(['ektavyas.edu@gmail.com','raptifashion@gmail.com'])
                     ->send(new orderDetailMailer($maildata,$mailall,$base_url));
 
                 // $invoice = $all['invoice_id'];

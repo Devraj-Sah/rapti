@@ -109,26 +109,26 @@ class RegisterController extends Controller
         $zip = $request->get('zip');
         $country = $request->get('country');
         $phone = $request->get('phone');
-        $recipients = [
-            // '',
-            // 'ekta-vyas2002@yahoo.com',
-            // 'raptitradechannels@gmail.com',
-            'nabinyadav365@gmail.com',
-            'devraj.sah13@gmail.com',
+        // $recipients = [
+        //     // '',
+        //     // 'ekta-vyas2002@yahoo.com',
+        //     // 'raptitradechannels@gmail.com',
+        //     'nabinyadav365@gmail.com',
+        //     'devraj.sah13@gmail.com',
 
-            // 'order@raptifashiondirect.com',
-        ];
+        //     // 'order@raptifashiondirect.com',
+        // ];
         $base_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . "/"; 
 
-        $mailto1 = 'devraj.sah13@gmail.com';
-        $mailto2 = 'nabinyadav365@gmail.com';
+        $mailto1 = 'ekta-vyas2002@yahoo.com';
+        $mailto2 = 'raptitradechannels@gmail.com';
 
         $data = compact('name','email','token','user_id','company','address','address_2','city','state','zip','country','phone','base_url','mailto2');
-        Mail::to('devraj.sah13@gmail.com')->send(new RegistrationAuthorizationMailer($data));
+        Mail::to('ekta-vyas2002@yahoo.com')->send(new RegistrationAuthorizationMailer($data));
         
         $data = [];
         $data = compact('name','email','token','user_id','company','address','address_2','city','state','zip','country','phone','base_url','mailto1');
-        Mail::to('nabinyadav365@gmail.com')->send(new RegistrationAuthorizationMailer($data));
+        Mail::to('raptitradechannels@gmail.com')->send(new RegistrationAuthorizationMailer($data));
         
         return redirect()->back()->with('success', 'Registered Successfully. Please Login..');
     }

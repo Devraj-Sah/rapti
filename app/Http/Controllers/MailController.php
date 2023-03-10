@@ -46,7 +46,7 @@ class MailController extends Controller
         // print_r($data);
         // die();
         Mail::to('info@raptifashiondirect.com')
-            ->bcc(['ektavyas.edu@gmail.com','raptifashion@gmail.com','devraj.sah13@gmail.com'])
+            ->bcc(['ektavyas.edu@gmail.com','raptifashion@gmail.com'])
             ->send(new contactUsMailer($data));
         return redirect()->back()->with('sent_mail',"Please Check your Mail !!!");
     }
